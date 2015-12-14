@@ -13,11 +13,11 @@ var z1Max = 1000;
 var disaggMin = 0.001;
 var disaggMax = 0.95;
 
-var valuesYInt = [50, 10, 2];
 var valuesXInt = [];
+var valuesYInt = [50, 10, 2];
+var valuesXAxis = [];
 var valuesYAxis = [99, 1];
 var valuesYError = [0.05, 0.0005];
-var valuesXAxis = [];
 
 $(document).ready(function() {
 
@@ -198,7 +198,6 @@ function refreshTable(array) {
     //var xSpecInt;
     //var hasInterpolatedSpecInt = false;
     var j = 0; var k = 0;
-    valuesXInt = []; valuesXAxis = [];
     var upperBound = valuesYAxis[0] - valuesYError[0];
     var lowerBound = valuesYAxis[1] - valuesYError[1];
 
@@ -515,6 +514,11 @@ function updatePage(isCalculating, wasCancelled) {
         $('#result-table').html("");
         $('#disaggresult').html("");
         $('#plot').html("");
+        valuesXInt = [];
+        valuesYInt = [50, 10, 2];
+        valuesXAxis = [];
+        valuesYAxis = [99, 1];
+        valuesYError = [0.05, 0.0005];
     } else {
         if (!isCalculating) {toggleResultTable()}
     }

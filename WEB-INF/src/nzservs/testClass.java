@@ -11,8 +11,8 @@ public class testClass {
 		nzhccServlet serv = new nzhccServlet();
 		nzhccResponse resp = new nzhccResponse();
 		
-		serv.lon = 170.04;
-		serv.lat = -41.64;
+		serv.lon = 175.86;
+		serv.lat = -38.80;
 		serv.vs30 = 250;
 		serv.z1 = 320;
 		serv.period = 1.0;

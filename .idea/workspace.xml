@@ -2,7 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50dacb2a-b654-49b2-9e92-26715390f512" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/19/30fbf3407b9c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/1f/1011fadb7a9c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/46/901230f1a39c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/6a/006855c2979c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/7/7083ae54a89c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/7e/f0220315979c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/84/b097aea8969c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/91/803da9cd9c9c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/aa/a0b078cb969c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/b9/503d3abd9c9c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/c/b001d7e6a79c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/cb/c046f0ca969c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/df/90fcaa50a89c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/df/f03aa2e5969c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/e1/d0d7ccd4969c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/e4/c0f7c875809c00151204b21a34f1e1b3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/f3/a046d1ac579d00151e3793dbee70df54" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.root/30.tree" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.recommenders/index/http___download_eclipse_org_recommenders_models_mars_/_e.fdt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.recommenders/index/http___download_eclipse_org_recommenders_models_mars_/_e.fdx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.recommenders/index/http___download_eclipse_org_recommenders_models_mars_/_e.fnm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.recommenders/index/http___download_eclipse_org_recommenders_models_mars_/_e.frq" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.recommenders/index/http___download_eclipse_org_recommenders_models_mars_/_e.nrm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.recommenders/index/http___download_eclipse_org_recommenders_models_mars_/_e.prx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.recommenders/index/http___download_eclipse_org_recommenders_models_mars_/_e.tii" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.recommenders/index/http___download_eclipse_org_recommenders_models_mars_/_e.tis" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.recommenders/index/http___download_eclipse_org_recommenders_models_mars_/segments_f" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.mylyn/.tasks.xml.zip" afterPath="$PROJECT_DIR$/.metadata/.mylyn/.tasks.xml.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.mylyn/tasks.xml.zip" afterPath="$PROJECT_DIR$/.metadata/.mylyn/tasks.xml.zip" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/WEB-INF/.indexes/e4/2f/history.index" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/WEB-INF/.indexes/e4/2f/history.index" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/WEB-INF/.indexes/e4/e4/de/ac/d5/b1/history.index" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/WEB-INF/.indexes/e4/e4/de/ac/d5/b1/history.index" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/WEB-INF/.markers" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/WEB-INF/.markers" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/WEB-INF/org.eclipse.jdt.core/state.dat" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.projects/WEB-INF/org.eclipse.jdt.core/state.dat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/539572653.index" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/539572653.index" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.recommenders/index/http___download_eclipse_org_recommenders_models_mars_/segments.gen" afterPath="$PROJECT_DIR$/.recommenders/index/http___download_eclipse_org_recommenders_models_mars_/segments.gen" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/classes/nzservs/testClass.class" afterPath="$PROJECT_DIR$/WEB-INF/classes/nzservs/testClass.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.log" afterPath="$PROJECT_DIR$/.metadata/.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties" afterPath="$PROJECT_DIR$/.metadata/.plugins/org.eclipse.pde.core/.cache/clean-cache.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.metadata/version.ini" afterPath="$PROJECT_DIR$/.metadata/version.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WEB-INF/src/nzservs/testClass.java" afterPath="$PROJECT_DIR$/WEB-INF/src/nzservs/testClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.css" afterPath="$PROJECT_DIR$/main.css" />
@@ -26,17 +70,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33716077">
-              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="279" column="1" selection-start-line="279" selection-start-column="1" selection-end-line="279" selection-end-column="1" />
               <folding>
                 <element signature="e#2801#4003#0" expanded="false" />
                 <element signature="n#!!block;n#refreshTable#0" expanded="false" />
                 <element signature="n#!!block;n#drawChart#0" expanded="false" />
                 <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-                <element signature="n#!!block;n#updateCoords#0" expanded="false" />
                 <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
                 <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
                 <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -55,23 +98,24 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231">
-              <caret line="45" column="131" selection-start-line="45" selection-start-column="131" selection-end-line="45" selection-end-column="131" />
+            <state vertical-scroll-proportion="22.76923">
+              <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.23077">
-              <caret line="169" column="21" selection-start-line="169" selection-start-column="21" selection-end-line="169" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.6032258">
+              <caret line="214" column="23" selection-start-line="214" selection-start-column="23" selection-end-line="214" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -100,9 +144,9 @@
         <option value="$PROJECT_DIR$/WEB-INF/example.html" />
         <option value="$PROJECT_DIR$/example.html" />
         <option value="$PROJECT_DIR$/form.html" />
-        <option value="$PROJECT_DIR$/main.css" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/main.css" />
       </list>
     </option>
   </component>
@@ -112,10 +156,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="x" value="-1374" />
+    <option name="y" value="617" />
+    <option name="width" value="1382" />
+    <option name="height" value="784" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -142,7 +186,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -178,6 +221,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -258,10 +302,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-1374" y="617" width="1382" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17447917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24524158" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -300,6 +344,14 @@
     <entry file="file://$PROJECT_DIR$/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="169" column="21" selection-start-line="169" selection-start-column="21" selection-end-line="169" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="119" column="18" selection-start-line="119" selection-start-column="18" selection-end-line="119" selection-end-column="18" />
           <folding />
         </state>
@@ -314,7 +366,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -335,9 +386,10 @@
           <caret line="262" column="144" selection-start-line="262" selection-start-column="144" selection-end-line="262" selection-end-column="144" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -359,7 +411,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -380,9 +431,10 @@
           <caret line="200" column="67" selection-start-line="200" selection-start-column="67" selection-end-line="200" selection-end-column="67" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -404,7 +456,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -428,7 +479,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -449,9 +499,10 @@
           <caret line="239" column="113" selection-start-line="239" selection-start-column="113" selection-end-line="239" selection-end-column="113" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -473,7 +524,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -494,9 +544,10 @@
           <caret line="266" column="18" selection-start-line="266" selection-start-column="18" selection-end-line="266" selection-end-column="18" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -518,7 +569,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -539,9 +589,10 @@
           <caret line="266" column="18" selection-start-line="266" selection-start-column="18" selection-end-line="266" selection-end-column="18" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -563,7 +614,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -584,9 +634,10 @@
           <caret line="279" column="0" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -608,7 +659,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -629,9 +679,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -653,7 +704,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -674,9 +724,10 @@
           <caret line="236" column="55" selection-start-line="236" selection-start-column="55" selection-end-line="236" selection-end-column="55" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -698,7 +749,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -719,9 +769,10 @@
           <caret line="236" column="55" selection-start-line="236" selection-start-column="55" selection-end-line="236" selection-end-column="55" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -743,7 +794,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -764,9 +814,10 @@
           <caret line="236" column="48" selection-start-line="236" selection-start-column="48" selection-end-line="236" selection-end-column="48" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -788,7 +839,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -809,24 +859,11 @@
           <caret line="40" column="94" selection-start-line="40" selection-start-column="94" selection-end-line="40" selection-end-column="94" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="112" column="9" selection-start-line="112" selection-start-column="9" selection-end-line="112" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -847,7 +884,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -868,9 +904,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -892,7 +929,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -913,9 +949,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -929,7 +966,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -950,9 +986,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -966,7 +1003,6 @@
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -987,62 +1023,39 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example.html">
+    <entry file="file://$USER_HOME$/Dropbox/nzhcc v1/NZHCC folder dec10/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769">
-          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
+        <state vertical-scroll-proportion="-5.5935483">
+          <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chart.js">
+    <entry file="file://$USER_HOME$/Dropbox/nzhcc v1/NZHCC folder dec10/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.6085596">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding>
-            <marker date="1448334097841" expanded="true" signature="3860:3926" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.23077">
-          <caret line="169" column="21" selection-start-line="169" selection-start-column="21" selection-end-line="169" selection-end-column="21" />
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="69" column="21" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231">
-          <caret line="45" column="131" selection-start-line="45" selection-start-column="131" selection-end-line="45" selection-end-column="131" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#1;n#div#3;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33716077">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="279" column="1" selection-start-line="279" selection-start-column="1" selection-end-line="279" selection-end-column="1" />
           <folding>
             <element signature="e#2801#4003#0" expanded="false" />
             <element signature="n#!!block;n#refreshTable#0" expanded="false" />
             <element signature="n#!!block;n#drawChart#0" expanded="false" />
             <element signature="n#!!block;n#interpolateX#0" expanded="false" />
-            <element signature="n#!!block;n#updateCoords#0" expanded="false" />
             <element signature="n#!!block;n#toggleCoords#0" expanded="false" />
             <element signature="n#!!block;n#updateDefaultZ1#0" expanded="false" />
             <element signature="n#!!block;n#toggleDefaultZ1#0" expanded="false" />
@@ -1054,6 +1067,28 @@
             <element signature="n#!!block;n#validateDisaggInputs#0" expanded="false" />
             <element signature="n#!!block;n#updatePageForDisagg#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="22.76923">
+          <caret line="43" column="49" selection-start-line="43" selection-start-column="49" selection-end-line="43" selection-end-column="49" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#form#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#form#1;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6032258">
+          <caret line="214" column="23" selection-start-line="214" selection-start-column="23" selection-end-line="214" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>

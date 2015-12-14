@@ -1,5 +1,10 @@
 /* Form */
 
+#contentcontainer {
+    margin: 10px;
+    width: 100%;
+}
+
 #contentcontainer button {
     float: right;
     font-size: 12pt;
@@ -7,13 +12,28 @@
     width: 100px;
 }
 
+#contentcontainer > div {
+    width: 90%;
+}
+
 #contentcontainer form {
-    background-color: lightgrey;
+    background-color: silver;
     border: 1px solid darkslategrey;
     border-radius: 1em;
     display: flex;
+    flex-wrap: wrap;
+    height: auto;
     padding: 2em;
-    width: 100%;
+    width: 90%;
+}
+
+#contentcontainer form > div {
+    background-color: lightgrey;
+    border-radius: 1em;
+    height: inherit;
+    margin: 0 auto 2em;
+    padding: 1em;
+    width: 440px;
 }
 
 #contentcontainer h3 {
@@ -41,7 +61,7 @@
     display: inline-block;
     margin-top: 10px;
     text-align: left;
-    width: 230px;
+    width: 200px;
 }
 
 #contentcontainer select {
@@ -53,6 +73,8 @@
 }
 
 #contentcontainer textarea {
+    padding-left: 5px;
+    padding-right: 5px;
     resize: none;
     vertical-align: top;
 }
@@ -81,32 +103,31 @@
     border: 1px solid darkgray;
     border-radius: 1em;
     display: none;
-    padding: 1em;
+    padding: 0.5em;
 }
 
 #disclaimer {
     color: darkred;
     font-style: italic;
-    margin: 15px auto;
+    margin: 15px 0;
+}
+
+#contact-us {
+    margin: 15px 0;
 }
 
 /* Inputs */
 
-#nzhcc {
-    height: 400px;
-}
-
-#inputs-var {
-    height: 100%;
-    width: 500px;
+#inputs-var div {
+    overflow: hidden;
 }
 
 #inputs-var input[type="checkbox"] {
-    margin-left: 183px;
+    margin-left: 163px;
 }
 
 #inputs-var label {
-    width: 170px;
+    width: 150px;
 }
 
 #inputs-var label.chklabel {
@@ -121,27 +142,31 @@
 }
 
 #inputs-fixed {
-    height: 100%;
-    margin-left: auto;
-    width: 500px;
+    min-height: 250px;
+    position: relative;
+}
+
+#inputs-fixed label {
+    width: 225px;
 }
 
 #inputs-fixed span {
     font-weight: bold;
-    margin-left: 50px;
+    margin-left: 15px;
+    width: auto;
 }
 
 #inputs-buttons {
-    float: right;
-    position: relative;
-    top: 170px;
-    width: 100px;
+    bottom: 1em;
+    position: absolute;
+    right: 1em;
 }
 
 /* Outputs */
 
 #resultcontainer {
     display: flex;
+    flex-wrap: wrap;
     vertical-align: top;
 }
 
@@ -161,9 +186,12 @@
     width: 150px;
 }
 
+#result-chart {
+    width: 550px;
+}
+
 #result-main {
     display: block;
-    flex: 1;
 }
 
 #result-options {
@@ -176,35 +204,19 @@
 
 /* Disaggregation */
 
-#disagg {
-    height: 75px;
-}
-
-#disagg-var {
-    margin-right: auto;
-}
-
 #disagg-buttons {
-    width: 100px;
+    bottom: 1em;
+    position: absolute;
+    right: 1em;
 }
 
-#disagg-clear {
+#disagg-right {
+    min-height: 90px;
     position: relative;
-    top: 30px;
-}
-
-#disagg-compute {
-    position: relative;
-    top: 40px;
-}
-
-#disagg-modify {
-    position: relative;
-    top: 40px;
 }
 
 #disaggresult div {
-    margin: 10px auto;
+    margin: 10px 0;
 }
 
 #disaggresult img {

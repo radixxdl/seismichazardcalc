@@ -17,10 +17,10 @@
   <script src="//static.canterbury.ac.nz/web/scripts/jquery/bxslider/jquery.bxSlider.min4.js" type="text/javascript"></script>
   <script src="//static.canterbury.ac.nz/web/scripts/jquery/rsv/jquery.rsv-2.5.1.js" type="text/javascript"></script>
   <script src="//static.canterbury.ac.nz/web/scripts/uc/custom2.js?v=2" type="text/javascript"></script>
-  <script src="/uscripts/urchin.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    urchinTracker();
-  </script>
+  <!--<script src="/uscripts/urchin.js" type="text/javascript"></script>-->
+  <!--<script type="text/javascript">-->
+    <!--urchinTracker();-->
+  <!--</script>-->
   <script src="//static.canterbury.ac.nz/web/scripts/jquery/respond/respond.min.js" type="text/javascript"></script>
 
   <link href="http://www.canterbury.ac.nz/brand/red/css/wt-accordion-sups2.css" rel="stylesheet" type="text/css" />
@@ -40,7 +40,7 @@
   <!-- Dom's additions -->
   <script src="app.js" type="text/javascript" ></script>
   <link href="main.css" rel="stylesheet" type="text/css" />
-  <script src="https://cdn.jquerytools.org/1.2.6/tiny/jquery.tools.min.js" type="text/javascript"></script>
+  <script src="http://cdn.jquerytools.org/1.2.6/tiny/jquery.tools.min.js" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/jqplot/1.0.8/jquery.jqplot.min.js" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/jqplot/1.0.8/plugins/jqplot.canvasAxisLabelRenderer.min.js" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/jqplot/1.0.8/plugins/jqplot.canvasAxisTickRenderer.min.js" type="text/javascript"></script>
@@ -205,21 +205,23 @@
         <a href="/NZHCC/index.html">NZ Seismic Hazard Analysis</a>  &nbsp;&nbsp;
       </div>
 
-      <h1>Seismic Hazard Calculator (alpha)</h1>
-      <div>
-        The Seismic Hazard Calculator is powered by OpenSHA. The source code for OpenSHA can be accessed at the <a href="http://www.opensha.org/apps">OpenSHA website</a>.<br>
-        This is an alpha release. This means that the application is still in development, and not all of the core features are present.<br>
-        This version has been made available on the web for testing purposes only.<br>
-        <br>
-        The Seismic Hazard Calculator has been made accessible to the public in order to demonstrate the benefits of site-specific hazard analyses.<br>
-        These benefits have been discussed in the <a href="http://bulletin.nzsee.org.nz/48/2/0092" target="_blank">Bradley (2015) paper</a>,
-        as published in volume 48, issue 2 of the <a href="http://www.nzsee.org.nz/publications/nzsee-quarterly-bulletin/vol-41-50/" target="_blank">NZSEE bulletin</a>.
-      </div>
-      <div id="disclaimer">
-        Disclaimer: While this tool is available for public use, it must be emphasised that no liability for its use is accepted.
-      </div>
-
       <div id="contentcontainer">
+
+        <h1>Seismic Hazard Calculator (alpha)</h1>
+        <div>
+          The Seismic Hazard Calculator is powered by OpenSHA. The source code for OpenSHA can be accessed at the <a href="http://www.opensha.org/apps">OpenSHA website</a>.<br>
+          <br>
+          This application has been made accessible to the public in order to demonstrate the benefits of site-specific hazard analyses.<br>
+          These benefits have been discussed in the <a href="http://bulletin.nzsee.org.nz/48/2/0092" target="_blank">Bradley (2015) paper</a>,
+          as published in volume 48, issue 2 of the <a href="http://www.nzsee.org.nz/publications/nzsee-quarterly-bulletin/vol-41-50/" target="_blank">NZSEE bulletin</a>.<br>
+          <br>
+          This is an <i>alpha release</i>, meaning that the application is still in development, and not all of the core features are present.<br>
+          There is no version number currently assigned to this release, but the source code can be accessed via <a href="https://github.com/radixxdl/seismichazardcalc">GitHub</a>.<br>
+          For now, this tool has been made available on the web for testing purposes only.<br>
+        </div>
+        <div id="disclaimer">
+          Disclaimer: While the Seismic Hazard Calculator is available for public use, it must be emphasised that no liability for its use is accepted.
+        </div>
 
         <form id="nzhcc" action="nzservs/nzhccServlet" method="get">
 
@@ -229,8 +231,8 @@
             <div>
               <label for="address">Site Address:</label>
               <div class="tooltip">Street address to look up on Google Maps</div>
-              <textarea id="address" name="address" rows="2" cols="35" autofocus>University of Canterbury, Christchurch</textarea><br>
-              <input type="checkbox" id="defaultLatLon" checked><label for="defaultLatLon" class="chklabel">search for coordinates (Google)</label><br>
+              <textarea id="address" name="address" rows="2" cols="32" autofocus>University of Canterbury, Christchurch</textarea><br>
+              <input type="checkbox" id="defaultLatLon" checked><label for="defaultLatLon" class="chklabel">use Google to find coordinates</label><br>
               <span id="address-warn" class="warning" hidden>The address could not be found on Google Maps.</span>&nbsp;
             </div>
 
@@ -320,18 +322,15 @@
             </div>
 
             <div><label for="timespan">Time Span:</label>
-              <span id="timespan">50 years</span><br>&nbsp;
+              <span id="timespan">50&nbsp;years</span><br>&nbsp;
             </div>
 
             <div id="inputs-buttons">
-              <button type="button" id="modify" hidden>Modify</button>
-              <button type="submit" id="compute">Compute</button>
-              <button type="reset" id="clear" hidden>Clear</button>
+              <div><button type="button" id="modify" hidden>Modify</button></div>
+              <div><button type="submit" id="compute">Compute</button></div>
+              <div><button type="reset" id="clear" hidden>Clear</button></div>
             </div>
           </div>
-
-          <!--<div id="inputs-buttons">-->
-          <!--</div>-->
 
         </form>
 
@@ -361,10 +360,13 @@
             <span id="disaggval-warn" class="warning" hidden>The valid range of disaggregation value is 0.001 to 0.95.</span></div>
           </div>
 
-          <div id="disagg-buttons">
-            <button type="button" id="disagg-modify" hidden>Modify</button>
-            <button type="submit" id="disagg-compute">Compute</button>
-            <button type="reset" id="disagg-clear" hidden>Clear</button>
+          <div id="disagg-right">
+            <div>Note: For each option selected, the disaggregation function will take up to two minutes to process.</div>
+            <div id="disagg-buttons">
+              <div><button type="button" id="disagg-modify" hidden>Modify</button></div>
+              <div><button type="submit" id="disagg-compute">Compute</button></div>
+              <div><button type="reset" id="disagg-clear" hidden>Clear</button></div>
+            </div>
           </div>
 
         </form>
@@ -373,14 +375,13 @@
 
         <div id="disaggresult" hidden></div>
 
-      </div>
+        <div id="contact-us">
+          For any enquiries about this tool and how it works, please contact the site administrator at <a href="mailto:dominic.sc.lo@gmail.com">dominic.sc.lo@gmail.com</a>.
+        </div>
 
-      <div>
-        <br>
-        For any enquiries about this tool and how it works, please contact the site administrator at <a href="mailto:dominic.sc.lo@gmail.com">dominic.sc.lo@gmail.com</a>.
-      </div>
+        <div id="plot" style="height:400px; width:600px;" hidden></div>
 
-      <div id="plot" style="height:400px; width:600px;" hidden></div>
+      </div>
     </div>
 
     <div id="allfooter">
