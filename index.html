@@ -40,8 +40,14 @@
   <!-- Dom's additions -->
   <script src="app.js" type="text/javascript" ></script>
   <link href="main.css" rel="stylesheet" type="text/css" />
-  <script src="http://cdn.jquerytools.org/1.2.6/tiny/jquery.tools.min.js" type="text/javascript"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.8/jquery.jqplot.min.css." type="text/javascript"></script>
+  <script src="https://cdn.jquerytools.org/1.2.6/tiny/jquery.tools.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/jqplot/1.0.8/jquery.jqplot.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/jqplot/1.0.8/plugins/jqplot.canvasAxisLabelRenderer.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/jqplot/1.0.8/plugins/jqplot.canvasAxisTickRenderer.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/jqplot/1.0.8/plugins/jqplot.canvasOverlay.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/jqplot/1.0.8/plugins/jqplot.canvasTextRenderer.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/jqplot/1.0.8/plugins/jqplot.logAxisRenderer.min.js" type="text/javascript"></script>
+  <link href="http://cdn.jsdelivr.net/jqplot/1.0.8/jquery.jqplot.min.css" rel="stylesheet" type="text/css" />
   <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>-->
 
 </head>
@@ -333,15 +339,16 @@
 
         <div id="resultcontainer" class="result" hidden>
 
-          <div id="result-main" class="result" hidden>
+          <div id="result-main" class="result" style="display:none">
             <div id="result-interpolated" class="result" hidden></div>
             <div id="result-options" class="result" hidden>
               <h4>Output Options</h4>
-              <input id="displaytable" type="checkbox"><label for="displaytable">show full table</label>
+              <input id="displaytable" type="checkbox"><label for="displaytable">show table instead of chart</label>
               <!--<div><label for="specpc">Specific PoE (%)</label><input type="text" id="specpc" name="specpc" value="0" /></div>-->
             </div>
           </div>
 
+          <div id="result-chart" hidden></div>
           <div id="result-table" hidden></div>
           <div id="response-data" hidden></div>
         </div>
@@ -372,6 +379,8 @@
         <br>
         For any enquiries about this tool and how it works, please contact the site administrator at <a href="mailto:dominic.sc.lo@gmail.com">dominic.sc.lo@gmail.com</a>.
       </div>
+
+      <div id="plot" style="height:400px; width:600px;" hidden></div>
     </div>
 
     <div id="allfooter">

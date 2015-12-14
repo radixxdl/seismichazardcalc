@@ -2,7 +2,6 @@
  * Created by Dominic on 19/11/2015.
  */
 
-var valuesInt = [50, 10, 2];
 var lonMin = 166;
 var lonMax = 179;
 var latMin = -48;
@@ -13,6 +12,12 @@ var z1Min = 0;
 var z1Max = 1000;
 var disaggMin = 0.001;
 var disaggMax = 0.95;
+
+var valuesYInt = [50, 10, 2];
+var valuesXInt = [];
+var valuesYAxis = [99, 1];
+var valuesYError = [0.05, 0.0005];
+var valuesXAxis = [];
 
 $(document).ready(function() {
 
@@ -43,13 +48,14 @@ $(document).ready(function() {
                 var dataArray = data.hazFunction.points.list;
                 $('#response-data').text(JSON.stringify(dataArray));
                 refreshTable(dataArray);
+                drawChart(dataArray);
                 updatePage(false, false);
 
             })
 
             // Display error message
             .fail(function() {
-                $('#result-table').text("Error encountered, please contact the site administrator.");
+                $('#result-interpolated').text("Error encountered, please contact the site administrator.");
                 updatePage(false, false);
             })
 
@@ -189,9 +195,12 @@ function refreshTable(array) {
 
     var xInt, yInt;
     var td1, td2;
-    var xSpecInt;
-    var hasInterpolatedSpecInt = false;
-    var j = 0;
+    //var xSpecInt;
+    //var hasInterpolatedSpecInt = false;
+    var j = 0; var k = 0;
+    valuesXInt = []; valuesXAxis = [];
+    var upperBound = valuesYAxis[0] - valuesYError[0];
+    var lowerBound = valuesYAxis[1] - valuesYError[1];
 
     // Insert table data
     for (var i = 0; i < array.length; i++) {
@@ -204,14 +213,34 @@ function refreshTable(array) {
         xNum = array[i]["x"];
         yNum = array[i]["y"] * 100;
 
+        // Check axis limits
+        if (k < valuesYAxis.length) {
+
+            if (yNum < valuesYAxis[k]) {
+
+                // If first entry, check if highest probability is less than expected
+                if (i == 0) {
+                    upperBound = yNum - valuesYError[0];
+                    valuesYAxis[0] = yNum;
+                    valuesXAxis[0] = xNum;
+                    k++}
+
+                else {
+                    yInt = valuesYAxis[k];
+                    xInt = interpolateX(yInt, xNumOld, xNum, yNumOld, yNum);
+                    valuesXAxis.push(xInt);
+                    k++;
+                }
+            }
+        }
+
         // Fill table with numbers within a certain range
-        // First check: lower number rounded to 3sf is 0.999 or lower
-        // Second check: higher number rounded to 3sf is 1.00e-6 or greater
-        if ((yNum < 98.95) && (yNumOld > 0.09995)) {
+        // First check: lower number rounded to 3sf is 0.990 or lower, or a lower value if starting value is lower.
+        // Second check: higher number rounded to 3sf is 1.00e-2 or greater
+        if ((yNum < upperBound) && (yNumOld > lowerBound)) {
 
             // Format xNum and yNum to the most readable format
             if (xNumOld > 0.01) {xNumOld = xNumOld.toPrecision(3)} else {xNumOld = xNumOld.toExponential(2)}
-            //if (yNumOld > 0.01) {yNumOld = yNumOld.toPrecision(3)} else {yNumOld = yNumOld.toExponential(2)}
             yNumOld = yNumOld.toPrecision(3);
 
             td1 = "<td>" + xNumOld + "</td>";
@@ -220,12 +249,13 @@ function refreshTable(array) {
         }
 
         // Check default probabilities
-        if (j < valuesInt.length) {
+        if (j < valuesYInt.length) {
 
-            if (yNum < valuesInt[j]) {
+            if (yNum < valuesYInt[j]) {
 
-                yInt = valuesInt[j];
+                yInt = valuesYInt[j];
                 xInt = interpolateX(yInt, xNumOld, xNum, yNumOld, yNum);
+                valuesXInt.push(xInt);
                 td1 = "<td>" + xInt + "</td>";
                 td2 = "<td>" + yInt + "</td>";
                 tblInt.append("<tr>" + td1 + td2);
@@ -252,7 +282,98 @@ function refreshTable(array) {
 
 function drawChart(array) {
 
-    //var plot = $.jqplot('xyChart', )
+    // Convert array to new array of x,y pairs
+    var newArray = []; var subArray;
+    for (var i = 0; i < array.length; i++) {
+        subArray = [];
+        subArray.push(array[i]["x"]);
+        subArray.push(array[i]["y"]);
+        newArray.push(subArray);
+    }
+    var xmax = array[array.length - 1]["x"];
+
+    // Prepare chart overlay
+    var arrLines = []; var line;
+    for (i = 0; i < valuesYInt.length; i++) {
+
+        line = {horizontalLine: {
+            y: valuesYInt[i] / 100,
+            xmin: valuesXAxis[0],
+            xmax: valuesXInt[i],
+            color: 'rgb(255, 0, 0)',
+            lineWidth: 2,
+            shadow: false
+        }};
+        arrLines.push(line);
+
+        line = {verticalLine: {
+            x: valuesXInt[i],
+            ymin: 0.01,
+            ymax: valuesYInt[i] / 100,
+            color: 'rgb(255, 0, 0)',
+            lineWidth: 2,
+            shadow: false
+        }};
+        arrLines.push(line);
+    }
+
+    // Prepare x-axis labels
+    var xArray = [1]; var tick;
+    $.each(valuesXInt, function(i, val) {if (!isNaN(val)) {xArray.push(val)}});
+    $.each(valuesXAxis, function(i, val) {if (!isNaN(val)) {xArray.push(val)}});
+    xArray.sort();
+
+    // Prepare y-axis labels
+    var yArray = [[0.01, 1]];
+    $.each(valuesYInt, function(i, val) {
+        tick = [];
+        tick.push(val / 100);
+        tick.push(val);
+        yArray.push(tick);
+    });
+    yArray.push([1, 100]);
+
+    // Set chart options
+    var options = {
+        axes: {
+            xaxis: {
+                label: "Spectral Acceleration (g)",
+                labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+                renderer: $.jqplot.LogAxisRenderer,
+                ticks: xArray,
+                tickOptions: {formatString: '%.2f', angle: -60},
+                tickRenderer: $.jqplot.CanvasAxisTickRenderer
+            },
+            yaxis: {
+                label: "Probability of Exceedence (%)",
+                labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+                renderer: $.jqplot.LogAxisRenderer,
+                ticks: yArray
+            }
+        },
+        series: [{
+            lineWidth: 4,
+            markerOptions: {show: false},
+            shadow: false
+        }],
+        canvasOverlay: {
+            show: true,
+            objects: arrLines
+        }
+    };
+
+    // Draw plot
+    var plot = $('#plot');
+    plot.toggle(true);
+    var chart = $.jqplot('plot', [newArray], options);
+
+    // Save plot as image
+    var img = plot.jqplotToImageStr({});
+    img = $('<img/>').attr('src', img);
+    plot.toggle(false);
+
+    // Set plot in chart div
+    $('#result-chart').html(img);
 }
 
 function interpolateX(target, xOld, xNew, yOld, yNew) {
@@ -267,12 +388,12 @@ function interpolateX(target, xOld, xNew, yOld, yNew) {
     var y0 = Math.log(yOld);
     var y1 = Math.log(yNew);
 
-    var xNum = parseFloat((target - y1)/(y0 - y1)*(x0 - x1)) + parseFloat(x1);
-    xNum = Math.exp(xNum);
+    var xVal = parseFloat((target - y1)/(y0 - y1)*(x0 - x1)) + parseFloat(x1);
+    xVal = Math.exp(xVal);
 
     // Convert result back for presentation
-    if (xNum > 0.01) {xNum = xNum.toPrecision(3)} else {xNum = xNum.toExponential(2)}
-    return xNum;
+    if (xVal > 0.01) {xVal = xVal.toPrecision(3)} else {xVal = xVal.toExponential(2)}
+    return xVal;
 }
 
 function updateCoords() {
@@ -334,7 +455,9 @@ function toggleDefaultZ1() {
 }
 
 function toggleResultTable() {
-    $('#result-table').toggle($('#displaytable').is(':checked'));
+    var displayTable = $('#displaytable').is(':checked');
+    $('#result-chart').toggle(!displayTable);
+    $('#result-table').toggle(displayTable);
 }
 
 function lockInputs(toBeLocked) {
@@ -383,6 +506,7 @@ function updatePage(isCalculating, wasCancelled) {
     $('#compute').toggle(!isCalculating && wasCancelled);
     $('#clear').toggle(!isCalculating && !wasCancelled);
     $('#processing').toggle(isCalculating);
+    //$('.result').toggle(true);
     $('.result').toggle(!isCalculating && !wasCancelled);
     $('#disagg').toggle(!isCalculating && !wasCancelled);
 
@@ -390,6 +514,7 @@ function updatePage(isCalculating, wasCancelled) {
         $('#displayall').attr('checked', false);
         $('#result-table').html("");
         $('#disaggresult').html("");
+        $('#plot').html("");
     } else {
         if (!isCalculating) {toggleResultTable()}
     }

@@ -146,8 +146,6 @@
 }
 
 #resultcontainer > div {
-    display: block;
-    flex: 1;
     margin: 30px;
 }
 
@@ -163,13 +161,18 @@
     width: 150px;
 }
 
+#result-main {
+    display: block;
+    flex: 1;
+}
+
+#result-options {
+    margin-top: 50px;
+}
+
 #result-options h4 {
     margin-bottom: 5px;
 }
-
-/*#response-data {*/
-    /*display: none;*/
-/*}*/
 
 /* Disaggregation */
 
