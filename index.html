@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html class=" modern js csstransforms csstransforms3d csstransitions" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="http://www.canterbury.ac.nz/brand/red/css/wt-layout2.css" rel="stylesheet" type="text/css" />
+  <!--link href="css/site.css" rel="stylesheet" type="text/css" /-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <script src="//static.canterbury.ac.nz/web/scripts/jquery/jquery/jquery-1.8.0.min.js" type="text/javascript"></script>
+  <script src="//static.canterbury.ac.nz/web/scripts/jquery/ui/js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+  <script src="//static.canterbury.ac.nz/web/scripts/jquery/dropmenu/jquery.dropmenu.js" type="text/javascript"></script>
+  <script src="//static.canterbury.ac.nz/web/scripts/jquery/accordion/scriptbreaker-multiple-accordion.js" type="text/javascript"></script>
+  <script src="//static.canterbury.ac.nz/web/scripts/jquery/prettyPhoto/jquery.prettyPhoto.js" type="text/javascript"></script>
+  <script src="//static.canterbury.ac.nz/web/scripts/jquery/nivo/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+  <script src="//static.canterbury.ac.nz/web/scripts/jquery/bxslider/jquery.bxSlider.min4.js" type="text/javascript"></script>
+  <script src="//static.canterbury.ac.nz/web/scripts/jquery/rsv/jquery.rsv-2.5.1.js" type="text/javascript"></script>
+  <script src="//static.canterbury.ac.nz/web/scripts/uc/custom2.js?v=2" type="text/javascript"></script>
+  <script src="/uscripts/urchin.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    urchinTracker();
+  </script>
+  <script src="//static.canterbury.ac.nz/web/scripts/jquery/respond/respond.min.js" type="text/javascript"></script>
+
+  <link href="http://www.canterbury.ac.nz/brand/red/css/wt-accordion-sups2.css" rel="stylesheet" type="text/css" />
+
+  <!-- InstanceBeginEditable name="head" -->
+  <title>NZ Seismic Hazard Analysis</title>
+  <link rel="icon" href=//static.canterbury.ac.nz/wcms/images/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="//static.canterbury.ac.nz/wcms/images/favicon.ico" type="image/x-icon" />
+
+  <!-- InstanceEndEditable -->
+
+  <!-- InstanceParam name="onload" type="text" value="" -->
+  <!-- InstanceBeginEditable name="lang" -->
+  <link href="http://www.canterbury.ac.nz/brand/red/css/wt-3col-home2.css" rel="stylesheet" type="text/css" />
+  <link href="http://www.canterbury.ac.nz/brand/red/css/wt-su-home2.css" rel="stylesheet" type="text/css" />
+
+  <!-- Dom's additions -->
+  <script src="app.js" type="text/javascript" ></script>
+  <link href="main.css" rel="stylesheet" type="text/css" />
+  <script src="http://cdn.jquerytools.org/1.2.6/tiny/jquery.tools.min.js" type="text/javascript"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.8/jquery.jqplot.min.css." type="text/javascript"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" type="text/javascript"></script>-->
+
+</head>
+<body>
+
+  <div id="maincontainer">
+
+    <div id="topsection">
+      <div id="topnav">
+
+
+        <form action="http://www.canterbury.ac.nz/search" method="get" id="googleform">
+          <input name="q" type="text" id="q" tabindex="1"/>
+          <input name="search" type="image" value="search" src="//static.canterbury.ac.nz/web/icons/general/search-icon.png" alt="Search" id="sb" />
+        </form>
+
+        <ul id="nav-one" class="dropmenu css-only">
+
+          <li>
+
+            <a href="http://www.canterbury.ac.nz" id="homelink"></a>
+
+          </li>
+
+          <li >
+
+
+            <a href="#">Study</a>
+
+            <ul>
+
+              <li><a href="http://www.canterbury.ac.nz/whyuc">Why UC</a></li>
+              <li><a href="http://www.canterbury.ac.nz/admissions">Admissions and Entry</a></li>
+              <li><a href="http://www.canterbury.ac.nz/future-students/qualifications-and-courses/">Courses, Subjects and<br/>Qualifications</a></li>
+              <li><a href="http://www.canterbury.ac.nz/enrol">Enrol at UC</a></li>
+              <li><a href="http://myuc.canterbury.ac.nz">myUC</a></li>
+              <li><a href="http://www.canterbury.ac.nz/scholarships">Scholarships</a></li>
+              <li><a href="http://learn.canterbury.ac.nz">Learn (Moodle)</a></li>
+              <li><a href="http://library.canterbury.ac.nz">Library</a></li>
+              <li><a href="http://www.canterbury.ac.nz/publications">Publications</a></li>
+
+            </ul>
+
+          </li>
+
+          <li>
+
+            <a href="#">Courses</a>
+
+            <ul>
+
+              <li><a href="http://www.canterbury.ac.nz/future-students/qualifications-and-courses/">Courses, Subjects and<br/>Qualifications</a></li>
+              <li><a href="http://www.canterbury.ac.nz/future-students/qualifications-and-courses/subjects/">Subject list A-Z</a></li>
+              <li><a href="http://www.canterbury.ac.nz/future-students/qualifications-and-courses/bachelors-degrees/">Bachelor's degrees</a></li>
+              <li><a href="http://www.canterbury.ac.nz/theuni/timetable">Timetable</a></li>
+              <li><a href="http://www.canterbury.ac.nz/future-students/qualifications-and-courses/preparatory-programmes/">Preparation courses</a></li>
+            </ul>
+
+          </li>
+
+          <li>
+
+            <a href="#">Departments</a> <!-- deal with this class properly in php -->
+            <ul>
+
+              <li><a href="http://www.canterbury.ac.nz/deptcentres.shtml">All Departments</a></li>
+              <li><a href="http://www.arts.canterbury.ac.nz">College of Arts</a></li>
+              <li><a href="http://www.buslaw.canterbury.ac.nz">College of Business and Law</a></li>
+              <li><a href="http://www.bsec.canterbury.ac.nz">School of Business and Economics</a></li>
+              <li><a href="http://www.education.canterbury.ac.nz">College of Education, Health and Human Development</a></li>
+              <li><a href="http://www.engf.canterbury.ac.nz">College of Engineering</a></li>
+              <li><a href="http://www.health.canterbury.ac.nz">UC Health</a></li>
+              <li><a href="http://www.laws.canterbury.ac.nz">School of Law</a></li>
+              <li><a href="http://www.science.canterbury.ac.nz">College of Science</a></li>
+              <li><a href="http://www.canterbury.ac.nz/deptcentres.shtml#service">Service Areas</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#">Students</a>
+
+            <ul>
+              <li><a href="http://www.canterbury.ac.nz/future-students">Future Students</a></li>
+              <li><a href="http://www.canterbury.ac.nz/international">International Students</a></li>
+              <li><a href="http://www.canterbury.ac.nz/postgrad">Postgraduate Students</a></li>
+              <li><a href="http://www.canterbury.ac.nz/currentstudents">Current Students</a></li>
+            </ul>
+
+          </li>
+
+          <li>
+            <a href="#">Research</a>
+
+            <ul>
+              <li><a href="http://www.research.canterbury.ac.nz">Research & Innovation</a></li>
+              <li><a href="http://www.canterbury.ac.nz/spark">Find an expert in UC SPARK</a></li>
+              <li><a href="http://www.research.canterbury.ac.nz/rescentres.shtml">Research Institutes and Research Centres</a></li>
+              <li><a href="http://www.canterbury.ac.nz/postgrad">Postgraduate Studies at UC</a></li>
+              <li><a href="http://www.nzi3.com">NZi3 National ICT Innovation Institute</a></li>
+              <li><a href="http://www.hpc.canterbury.ac.nz/?s=home">UC High Performance Computing</a></li>
+              <li><a href="http://library.canterbury.ac.nz">Library</a></li>
+            </ul>
+
+          </li>
+
+          <li>
+            <a href="#">Teaching</a>
+
+            <ul>
+              <li><a href="http://www.teachlearn.canterbury.ac.nz">Learning and Teaching</a></li>
+              <li><a href="http://library.canterbury.ac.nz">Library</a></li>
+              <li><a href="http://www.canterbury.ac.nz/academicservices/awards/awards.shtml">UC Teaching Awards</a></li>
+              <li> <a href=" http://www.canterbury.ac.nz/theuni/key_dates">Key Dates</a> </li>
+              <li><a href="http://learn.canterbury.ac.nz">Learn (Moodle)</a></li>
+            </ul>
+
+          </li>
+
+          <li>
+            <a href="#">Contact</a>
+
+            <ul>
+              <li><a href="http://www.canterbury.ac.nz/theuni/contacts/DirectorySearch.aspx">All University Contacts</a></li>
+              <!--li><a href="http://www.canterbury.ac.nz/theuni/contacts/contactservices.shtml">Student Contacts</a></li-->
+              <li><a href="http://www.comsdev.canterbury.ac.nz/media.shtml">Media Contacts</a></li>
+              <li><a href="http://www.canterbury.ac.nz/theuni/contacts/contactofficers.shtml">University Officers</a></li>
+              <li><a href="http://www.canterbury.ac.nz/liaison">Liaison </a></li>
+            </ul>
+
+          </li>
+
+        </ul>
+
+
+      </div>
+    </div>
+    <div id="bannersection">
+      <a href="http:/>/www.canterbury.ac.nz/">
+        <img src="//static.canterbury.ac.nz/web/graphics/blank.png" id="printlogo" alt="logo"/>
+      </a>
+      <div id="banner">
+
+        <div id="sitetitle"><div id="top"><h2>NZ Seismic Hazard Analysis</h2></div></div>
+      </div>
+    </div>
+
+    <div id="contentwrapper">
+
+      <div id="breadcrumbs">
+        <a href="http://www.canterbury.ac.nz/" accesskey="/"><abbr title="University of Canterbury">UC</abbr> Home</a> &gt;
+        <a href="http://www.canterbury.ac.nz/deptcentres.shtml">Departments</a> &gt;
+        <a href="http://www.engf.canterbury.ac.nz/">College of Engineering</a> &gt;
+        <a href="http://www.civil.canterbury.ac.nz/">Civil and Natural Resources Engineering</a> &gt;
+        NZ SHA Tools &gt;
+        <a href="/NZHCC/index.html">NZ Seismic Hazard Analysis</a>  &nbsp;&nbsp;
+      </div>
+
+      <h1>Seismic Hazard Calculator (alpha)</h1>
+      <div>
+        The Seismic Hazard Calculator is powered by OpenSHA. The source code for OpenSHA can be accessed at the <a href="http://www.opensha.org/apps">OpenSHA website</a>.<br>
+        This is an alpha release. This means that the application is still in development, and not all of the core features are present.<br>
+        This version has been made available on the web for testing purposes only.<br>
+        <br>
+        The Seismic Hazard Calculator has been made accessible to the public in order to demonstrate the benefits of site-specific hazard analyses.<br>
+        These benefits have been discussed in the <a href="http://bulletin.nzsee.org.nz/48/2/0092" target="_blank">Bradley (2015) paper</a>,
+        as published in volume 48, issue 2 of the <a href="http://www.nzsee.org.nz/publications/nzsee-quarterly-bulletin/vol-41-50/" target="_blank">NZSEE bulletin</a>.
+      </div>
+      <div id="disclaimer">
+        Disclaimer: While this tool is available for public use, it must be emphasised that no liability for its use is accepted.
+      </div>
+
+      <div id="contentcontainer">
+
+        <form id="nzhcc" action="nzservs/nzhccServlet" method="get">
+
+          <div id="inputs-var">
+            <h3>Variable Inputs</h3>
+
+            <div>
+              <label for="address">Site Address:</label>
+              <div class="tooltip">Street address to look up on Google Maps</div>
+              <textarea id="address" name="address" rows="2" cols="35" autofocus>University of Canterbury, Christchurch</textarea><br>
+              <input type="checkbox" id="defaultLatLon" checked><label for="defaultLatLon" class="chklabel">search for coordinates (Google)</label><br>
+              <span id="address-warn" class="warning" hidden>The address could not be found on Google Maps.</span>&nbsp;
+            </div>
+
+            <div>
+              <label for="lat">Latitude:</label>
+              <div class="tooltip">Latitude in degrees North</div>
+              <input type="text" id="lat" name="lat" readonly><br>
+              <span id="lat-warn" class="warning" hidden>The valid range of latitudes for NZ is -48 to -34.</span>&nbsp;
+            </div>
+
+            <div>
+              <label for="lon">Longitude:</label>
+              <div class="tooltip">Longitude in degrees East</div>
+              <input type="text" id="lon" name="lon" readonly><br>
+              <span id="lon-warn" class="warning" hidden>The valid range of longitudes for NZ is 166 to 179.</span>&nbsp;
+            </div>
+
+            <div>
+              <label for="vs30">Vs30 (m/sec):</label>
+              <div class="tooltip">Average shear-wave velocity to 30 m</div>
+              <input type="text" id="vs30" name="vs30" value="250" />
+              <a id="vs30-help" class="help"><img src="help.png"></a>
+              <div class="tooltip">
+                This is the time-averaged shear-wave velocity between 0 and 30 metres depth.<br>
+                For more information visit the <a href="http://www.opensha.org/glossary-shearWaveVelocity" target="_blank">OpenSHA Glossary</a>.
+              </div><br>
+              <span id="vs30-warn" class="warning" hidden>The valid range of vs30 is 150 to 3000.</span>&nbsp;
+            </div>
+
+            <div>
+              <label for="z1pt0">Depth 1.0 km/sec:</label>
+              <div class="tooltip">Depth where shear-wave velocity is 1.0 km/sec</div>
+              <input type="text" id="z1pt0" name="z1pt0" readonly />
+              <a id="z1pt0-help" class="help"><img src="help.png"></a>
+              <div class="tooltip">
+                This is the depth (km) to where shear-wave velocity is equal to 1.0 km/sec.<br>
+                For more information visit the <a href="http://www.opensha.org/glossary-shearWaveVelocity" target="_blank">OpenSHA Glossary</a>.<br>
+                <br>
+                This value can be estimated through an empirical relationship with Vs30. (Chiou and Youngs, 2008)<br>
+                To use this estimated value, check "use default".
+              </div><br>
+              <input type="checkbox" id="defaultZ1" checked><label for="defaultZ1" class="chklabel">use estimate (Chiou & Youngs)</label><br>
+              <span id="z1pt0-warn" class="warning" hidden>The valid range of z1.0 is 0 to 1000.</span>&nbsp;
+            </div>
+
+            <div>
+              <label for="periodSelect">SA Period (sec):</label>
+              <div class="tooltip">Period with which spectral acceleration is to be determined</div>
+              <select id="periodSelect" name="periodSelect">
+                <option value="0.01">0.01</option>
+                <option value="0.02">0.02</option>
+                <option value="0.03">0.03</option>
+                <option value="0.05">0.05</option>
+                <option value="0.075">0.075</option>
+                <option value="0.1">0.1</option>
+                <option value="0.15">0.15</option>
+                <option value="0.2">0.2</option>
+                <option value="0.25">0.25</option>
+                <option value="0.3">0.3</option>
+                <option value="0.4">0.4</option>
+                <option value="0.5">0.5</option>
+                <option value="0.75">0.75</option>
+                <option value="1.0" selected>1.0</option>
+                <option value="1.5">1.5</option>
+                <option value="2.0">2.0</option>
+                <option value="2.5">2.5</option>
+                <option value="3.0">3.0</option>
+                <option value="4.0">4.0</option>
+                <option value="5.0">5.0</option>
+                <option value="7.5">7.5</option>
+                <option value="10.0">10.0</option>
+              </select><input type="text" id="period" name="period" hidden readonly /><br>&nbsp;
+            </div>
+          </div>
+
+          <div id="inputs-fixed">
+            <h3>Fixed Inputs</h3>
+
+            <div>
+              <label for="erf">Earthquake Rupture Forecast:</label>
+              <span id="erf"><a href="http://www.es.govt.nz/media/48274/stirling_et_al_2012_nz_national_seismic_hazard_model.pdf" target="_blank">Stirling et al. (2012)</a></span><br>&nbsp;
+            </div>
+
+            <div>
+              <label for="imr">Intensity Measure Relationship:</label>
+              <span id="imr"><a href="http://bssa.geoscienceworld.org/content/103/3/1801.abstract" target="_blank">Bradley (2013)</a></span><br>&nbsp;
+            </div>
+
+            <div><label for="timespan">Time Span:</label>
+              <span id="timespan">50 years</span><br>&nbsp;
+            </div>
+
+            <div id="inputs-buttons">
+              <button type="button" id="modify" hidden>Modify</button>
+              <button type="submit" id="compute">Compute</button>
+              <button type="reset" id="clear" hidden>Clear</button>
+            </div>
+          </div>
+
+          <!--<div id="inputs-buttons">-->
+          <!--</div>-->
+
+        </form>
+
+        <div id="processing" class="processing" hidden><label for="cancel">Calculating ... </label><button id="cancel">Cancel</button></div>
+
+        <div id="resultcontainer" class="result" hidden>
+
+          <div id="result-main" class="result" hidden>
+            <div id="result-interpolated" class="result" hidden></div>
+            <div id="result-options" class="result" hidden>
+              <h4>Output Options</h4>
+              <input id="displaytable" type="checkbox"><label for="displaytable">show full table</label>
+              <!--<div><label for="specpc">Specific PoE (%)</label><input type="text" id="specpc" name="specpc" value="0" /></div>-->
+            </div>
+          </div>
+
+          <div id="result-table" hidden></div>
+          <div id="response-data" hidden></div>
+        </div>
+
+        <form id="disagg" action="nzservs/nzhccServlet" method="get" style="display:none" hidden>
+
+          <div id="disagg-var">
+            <h3>Disaggregation</h3>
+            <div><label for="disaggval">Disaggregation Value</label><input type="text" id="disaggval" name="disaggval" value="0.5" /><br>
+            <span id="disaggval-warn" class="warning" hidden>The valid range of disaggregation value is 0.001 to 0.95.</span></div>
+          </div>
+
+          <div id="disagg-buttons">
+            <button type="button" id="disagg-modify" hidden>Modify</button>
+            <button type="submit" id="disagg-compute">Compute</button>
+            <button type="reset" id="disagg-clear" hidden>Clear</button>
+          </div>
+
+        </form>
+
+        <div id="disagg-processing" class="processing" hidden><label for="cancel">Calculating ... </label><button id="disagg-cancel">Cancel</button></div>
+
+        <div id="disaggresult" hidden></div>
+
+      </div>
+
+      <div>
+        <br>
+        For any enquiries about this tool and how it works, please contact the site administrator at <a href="mailto:dominic.sc.lo@gmail.com">dominic.sc.lo@gmail.com</a>.
+      </div>
+    </div>
+
+    <div id="allfooter">
+      <div id="footersection">
+        <div id="footer">
+          <span id="copyright">&#169;&#160;University of Canterbury</span>
+          <ul><li><a href="http://www.canterbury.ac.nz/help/legal.shtml">Copyright and Disclaimer</a></li>
+            <li><a href="http://www.canterbury.ac.nz/privacy">Privacy</a></li>
+            <li><a href="http://www.canterbury.ac.nz/help/contact/">Feedback</a></li>
+            <li><a href="http://www.canterbury.ac.nz/help/">Help and Accessibility</a></li>
+            <li><a href="http://www.canterbury.ac.nz/help/a-z.shtml">A-Z of University Websites</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<!-- InstanceEnd -->
+</html>

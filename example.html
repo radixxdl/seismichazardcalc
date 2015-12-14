@@ -1,0 +1,230 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/lib/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/chart.css">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <!-- Third-party libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  <script src="js/lib/seedrandom-min.js"></script>
+  <script src="js/lib/sprintf.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.3.3/d3.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <!-- My JS files -->
+  <script src="js/app.js"></script>
+  <script src="js/chart.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/parsing.js"></script>
+  <script src="js/selection.js"></script>
+  <script src="js/util.js"></script>
+  <title>Ground Motion Selector</title>
+</head>
+<body ng-controller="MainCtrl">
+<div class="mainbody">
+  <h2>Ground Motion Selection based on the GCIM method</h2>
+  <p>This is a web-tool for selecting ground motions based on the GCIM method (Bradley, <a href="https://dl.dropboxusercontent.com/u/35408783/webpage/Publications/Journal/2010/Bradley_GCIMholisticGMselection_EESD_2010.pdf" target="_blank">2010</a>, <a href="https://dl.dropboxusercontent.com/u/35408783/webpage/Publications/Journal/2012/Bradley_GCIMconsistentGMselection_SDEE_2012.pdf" target="_blank">2012</a>).</p>
+  <div class="input panel">
+    <p>
+      <b>Select file of random realizations:</b> <input type="file" id="inputFileSelect" />
+					<span ng-show="fileLoading">
+						<img alt="Loading realization file..." src="images/ajax-loader.gif" style="vertical-align: top" />
+					</span>
+					<span ng-show="fileLoaded">
+						<img alt="Realization file loaded." src="images/tick.png" style="vertical-align: top" />
+					</span>
+      <a href="#gcimFileHelp" role="button" data-toggle="modal" class="whatsthis"><sup>(what's this?)</sup></a>
+    </p>
+    <hr />
+    <p>
+      <table ng-show="!!input" width="100%">
+        <tr>
+          <td>
+            <b>Conditioning IM:</b> {{ input.IMjName }} ({{ input.IML.toFixed(6) }})
+            <br />
+            <b>Prob Level:</b> {{ input.ProbLevel }}
+          </td>
+          <td>
+            <b>Number of IMs considered:</b> {{ input.numIMi }}
+            <br />
+            <b>Number of simulated realizations:</b> {{ input.numIMiRealizations }}
+          </td>
+        </tr>
+        <tr>
+          <td>
+    <p ng-show="chartData.length > 0">
+      Show chart for:
+      <select ng-model="visibleChart"
+              ng-options="chart.name as chart.name for chart in chartData">
+      </select>
+    </p>
+    </td>
+    <td>
+      <p>
+        <b>&alpha;: <input type="number" class="mediumnumerical" min="0.01" max="0.2" step="0.01" ng-model="alpha" /></b>
+      </p>
+    </td>
+    </tr>
+    </table>
+    </p>
+    <div ng-repeat="chart in chartData" ng-show="chart.name == visibleChart">
+      <chart id="'chart' + $index" data="chart" width="660px" height="400px"></chart>
+    </div>
+  </div>
+  <div class="output panel">
+    <div>
+      <b>Choose database of actual ground motions:</b>
+      <select ng-model="databaseName" ng-options="db.name as db.label for db in databases">
+        <option value="">-- Choose database --</option>
+      </select>
+					<span ng-show="dbLoading">
+						<img alt="Loading database..." src="images/ajax-loader.gif" style="vertical-align: top" />
+					</span>
+					<span ng-show="dbLoaded">
+						<img alt="Database loaded." src="images/tick.png" style="vertical-align: top" />
+					</span>
+    </div>
+
+    <div ng-show="!!input">
+      <hr />
+      <table>
+        <tr>
+          <td style="width:500px">
+            <table>
+              <tr>
+                <td>
+                  <b>Choose IM weightings:</b>
+                </td>
+                <td style="text-align:right">
+                  <a href="#weightings" role="button" class="btn" data-toggle="modal">Weightings</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b>Number of ground motions to select:</b>
+                </td>
+                <td style="text-align:right">
+                  <input type="number" class="smallnumerical" ng-model="Ngms" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b>Number of replicates to analyse:</b>
+                </td>
+                <td style="text-align:right">
+                  <input type="number" class="smallnumerical" ng-model="Nreplicates" />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <b>Repeatable (same result every time)?</b>
+                </td>
+                <td style="text-align:right">
+                  <input type="checkbox" ng-model="repeatability" />
+                </td>
+              </tr>
+            </table>
+          </td>
+          <td style="vertical-align:bottom">
+            <div>
+              <input class="btn btn-primary" type="button" ng-disabled="!dbLoaded" ng-click="selectGMs()" value="Select Ground Motions" />
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Weightings modal -->
+      <div id="weightings" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h3 id="modalLabel">Select IM weightings</h3>
+        </div>
+        <div class="modal-body">
+          <div class="leftcol">
+            <table>
+              <tr ng-repeat="IMi in input.IMi | even">
+                <td class="weightlabel">
+                  {{ IMi.name }}:
+                </td>
+                <td class="weightinput">
+                  <input class="mediumnumerical rightcol" type="number" min="0" step="any" ng-model="IMi.weighting" />
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="rightcol">
+            <table>
+              <tr ng-repeat="IMi in input.IMi | odd">
+                <td class="weightlabel">
+                  {{ IMi.name }}:
+                </td>
+                <td class="weightinput">
+                  <input class="mediumnumerical rightcol" type="number" min="0" step="any" ng-model="IMi.weighting" />
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <hr />
+
+    <!-- Output charts -->
+    <p ng-show="outputChartData.length > 0">
+      Show chart for:
+      <select ng-model="visibleOutputChart"
+              ng-options="chart.name as chart.name for chart in outputChartData">
+      </select>
+    </p>
+    <div ng-repeat="chart in outputChartData" ng-show="chart.name == visibleOutputChart">
+      <chart id="'outputChart' + $index" data="chart" width="660px" height="400px"></chart>
+    </div>
+  </div>
+  <h3 ng-show="!!selectionOutput">Output tables</h3>
+			<span ng-show="!!selectionOutput">
+				<pre>{{ selectionOutputString }}</pre>
+			</span>
+
+  <!-- Debug stuff goes down here -->
+  <h3 ng-show="debug">Debug output</h3>
+			<span ng-show="debug && dbLoaded">
+				<p>First database record:</p>
+				<pre>{{ databaseFirstLine }}</pre>
+			</span>
+			<span ng-show="debug &&!!debugOutput">
+				<p>Algorithm debug output:</p>
+				<pre>{{ debugOutput }}</pre>
+			</span>
+  <!-- <pre>{{ inputJsonString }}</pre> -->
+</div>
+
+<!-- Help modal for GCIM file -->
+<div id="gcimFileHelp" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="modalLabel">Random realization file</h3>
+  </div>
+  <div class="modal-body">
+    <p>
+      This file should be a GCIM output file created by OpenSHA.
+    </p>
+    <p>
+      <a href="examples/ExampleOpenSHA_GCIMresults.txt" target="_blank">Click here for an example input file.</a>
+    </p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
+
+<!-- Credits -->
+<div class="credits">
+  Created by <a href="https://sites.google.com/site/brendonabradley/" target="_blank">Brendon Bradley</a> and <a href="http://joey.scarr.co.nz/" target="_blank">Joey Scarr</a>
+</div>
+</body>
+</html>

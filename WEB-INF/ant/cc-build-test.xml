@@ -1,0 +1,131 @@
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    Copyright 2009 OpenSHA.org in partnership with
+    the Southern California Earthquake Center (SCEC, http://www.scec.org)
+    at the University of Southern California and the UnitedStates Geological
+    Survey (USGS; http://www.usgs.gov)
+    
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    
+      http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<project basedir="." default="svn.build.run.common.tests" name="Cruise Control Build File">
+	
+	<target name="svn.update">
+		<ant antfile="test.xml"  target="pre.test.init"/>
+		<ant antfile="build.xml" target="svn.update"/>
+	</target>
+	
+	<target name="svn.update.build" depends="svn.update">
+		<ant antfile="build.xml" target="build"/>
+		<ant antfile="build.xml" target="resource.all"/>
+	</target>
+	
+	<!-- Called by the OpenSHA-continuous CC project -->
+	<target name="svn.build.run.common.tests" depends="svn.update.build">
+		<ant antfile="test.xml" target="run.common.tests"/>
+	</target>
+	
+	<!-- Called by the OpenSHA-operational CC project -->
+	<target name="run.operational.tests">
+		<ant antfile="test.xml" target="run.operational.tests"/>
+	</target>
+	
+	<!-- Called by the OpenSHA-nightly CC project -->
+	<target name="svn.update.app.build" depends="svn.update.build">
+		<ant antfile="MultiAppBuilder.xml" target="build.nightly"/>
+		<ant antfile="CompleteJar.xml" target="build.nightly"/>
+	</target>
+	
+	<!-- Called by the OpenSHA-DistManualAppBuild CC project (only run manually) -->
+	<target name="svn.update.app.dist.build" depends="svn.update.build">
+		<ant antfile="MultiAppBuilder.xml" target="build.dist"/>
+		<ant antfile="CompleteJar.xml" target="build.dist"/>
+	</target>
+	
+	<!-- Called by the OpenSHA-JUnitNightlyCoverage CC project -->
+	<target name="svn.build.run.daily.coverage" depends="svn.update.build">
+		<ant antfile="test.xml" target="run.cobertura"/>
+		<antcall target="javadoc"/>
+		<!-- now test launching each app -->
+		<ant antfile="test.xml" target="run.app.launch.tests"/>
+	</target>
+	
+	<target name="javadoc">
+		<ant antfile="build.xml" target="javadoc">
+			<property name="javadoc.dir" value="/var/www/html/docs/opensha/javadoc/" />
+		</ant>
+	</target>
+	
+	<!-- this isn't called anymore -->
+	<target name="svn.build.run.weekly.coverage" depends="svn.update.build">
+		<ant antfile="test.xml" target="run.cobertura.weekly"/>
+	</target>
+	
+	<target name="restart.tomcat">
+		<echo message="shutting down tomcat"/>
+		<!-- shutdown tomcat -->
+		<exec executable="/bin/bash" timeout="10000">
+			<arg value="/usr/local/tomcat/default/bin/shutdown.sh"/>
+		</exec>
+		<!-- sleep -->
+		<echo message="sleeping for 5 seconds"/>
+		<sleep seconds="5"/>
+		<echo message="making sure it's really dead!"/>
+		<exec executable="/bin/bash" spawn="true">
+			<arg value="../scripts/cron/force_kill_tomcat.sh"/>
+		</exec>
+		<sleep seconds="1"/>
+		<!-- start tomcat -->
+		<echo message="starting up tomcat"/>
+		<exec executable="/bin/bash" spawn="true">
+			<arg value="/usr/local/tomcat/default/bin/startup.sh"/>
+		</exec>
+	</target>
+	
+	<!-- Called by the OpenSHA-FaultDBPrefData CC project -->
+	<target name="pref.fault.data.update">
+		<java
+			classname="org.opensha.refFaultParamDb.dao.db.PrefFaultSectionDataDB_DAO"
+			fork="true"
+			failonerror="true"
+			dir="../">
+			<arg value="--file"/>
+			<arg value="/usr/local/tomcat/default/webapps/OpenSHA_dev/WEB-INF/pref_update_user.dat"/>
+			<classpath>
+				<pathelement location="../classes" />
+				<fileset dir="../lib">
+					<include name="*.jar"/>
+				</fileset>
+			</classpath>
+		</java>
+		
+		<!-- run test to make sure the update was successful -->
+		<ant antfile="test.xml" target="run.pref.data.post.update.tests"/>
+		
+		<java
+			classname="org.opensha.refFaultParamDb.dao.db.DeformationModelPrefDataDB_DAO"
+			fork="true"
+			failonerror="true"
+			dir="../">
+			<arg value="--file"/>
+			<arg value="/usr/local/tomcat/default/webapps/OpenSHA_dev/WEB-INF/pref_update_user.dat"/>
+			<classpath>
+				<pathelement location="../classes" />
+				<fileset dir="../lib">
+					<include name="*.jar"/>
+				</fileset>
+			</classpath>
+		</java>
+	</target>
+	
+</project>

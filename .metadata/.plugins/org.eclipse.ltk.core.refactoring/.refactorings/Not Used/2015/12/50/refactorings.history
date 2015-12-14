@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;org.opensha.sha.gcim.imr.param.IntensityMeasureParams&apos; to &apos;WEB-INF/src&apos;&#x0D;&#x0A;- Original project: &apos;Not Used&apos;&#x0D;&#x0A;- Destination element: &apos;WEB-INF/src&apos;&#x0D;&#x0A;- Original element: &apos;Not Used/src/org.opensha.sha.gcim.imr.param.IntensityMeasureParams&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="=WEB-INF/src" element1="/src&lt;org.opensha.sha.gcim.imr.param.IntensityMeasureParams" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1449468171937" version="1.0"/>
+</session>

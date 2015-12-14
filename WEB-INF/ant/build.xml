@@ -1,0 +1,541 @@
+
+<!-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    Copyright 2009 OpenSHA.org in partnership with
+    the Southern California Earthquake Center (SCEC, http://www.scec.org)
+    at the University of Southern California and the UnitedStates Geological
+    Survey (USGS; http://www.usgs.gov)
+    
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+    
+      http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+
+<project basedir="." default="build" name="Compile">
+
+	<property name="build" value="../classes" />
+	<property name="tmpdest" value="../classes.temp" />
+	<property name="dist" value="../dist" />
+	<property name="src" value="../src/" />
+	<property name="dev" value="../dev/" />
+	<property name="test" value="../test/" />
+	<property name="lib.dir" value="../lib" />
+	<property name="ant.lib.dir" value="lib" />
+	<property name="svnant.lib.dir" value="${ant.lib.dir}/svnant-1.3.0" />
+	<property name="ant.jnlp.war.lib.dir" value="${ant.lib.dir}/ant-jnlp-war" />
+	<property name="javadoc.dir" value="../javadocs/" />
+	<property name="keystore.alias" value="opensha" />
+	<property name="keystore.pass" value="opensha" />
+	<property name="project.jnlp.dir" value="jnlp" />
+	<property name="app.build.type" value="nightly" />
+	
+	<path id="library.classpath">
+		<fileset dir="${lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="compile">
+		<javac debug="true" deprecation="false" optimize="true" destdir="${tmpdest}" nowarn="true"
+			source="1.5" target="1.5" failonerror="yes" verbose="no" fork="yes" encoding="utf-8"
+			memoryInitialSize="512m" memoryMaximumSize="1024m">
+			<classpath>
+				<pathelement location="${build}" />
+				<path refid="library.classpath" />
+			</classpath>
+			<src path="${src}" />
+			<src path="${dev}" />
+			<src path="${test}" />
+			<include name="scratch/**" />
+			<include name="org/**" />
+			<include name="com/**" />
+			<include name="nnls/**" />
+			<exclude name="**/_nobuild/**" />
+		</javac>
+	</target>
+
+	<target name="compile.tests" depends="">
+		<javac debug="true" deprecation="false" optimize="true" destdir="${build}" nowarn="true"
+			source="1.5" target="1.5" failonerror="yes" verbose="no" fork="yes" encoding="utf-8"
+			memoryInitialSize="512m" memoryMaximumSize="1024m">
+			<classpath>
+				<pathelement location="${build}" />
+				<path refid="library.classpath" />
+			</classpath>
+			<src path="${test}" />
+			<!--<include name="org/**" />-->
+			<exclude name="**/_nobuild/**" />
+		</javac>
+	</target>
+
+	<path id="svn.classpath">
+		<pathelement location="${svnant.lib.dir}/svnjavahl.jar" />
+		<pathelement location="${svnant.lib.dir}/svnant.jar" />
+		<pathelement location="${svnant.lib.dir}/svnClientAdapter.jar" />
+	</path>
+
+	<taskdef name="svn" classname="org.tigris.subversion.svnant.SvnTask" classpathref="svn.classpath" />
+
+	<target name="svn.update">
+		<svn>
+			<update revision="HEAD" dir="../" />
+		</svn>
+	</target>
+
+	<target name="init">
+		<mkdir dir="${tmpdest}" />
+		<mkdir dir="${build}" />
+		<mkdir dir="${dist}" />
+	</target>
+
+	<target name="precompilecleanup">
+		<delete dir="${tmpdest}" failonerror="yes" verbose="no" />
+	</target>
+
+	<target name="svn.build" depends="svn.update,build">
+	</target>
+
+	<target name="build" depends="precompilecleanup,init,compile">
+		<delete dir="${build}" failonerror="yes" verbose="no" />
+
+		<move todir="${build}">
+			<fileset dir="${tmpdest}" />
+		</move>
+
+		<delete dir="${tmpdest}" failonerror="yes" verbose="no" />
+	</target>
+
+	<target name="pre.jar" depends="precompilecleanup,init,compile">
+	</target>
+	
+	<target name="sign.jar" if="sign.jars">
+		<echo message="signing ${app.jar}"/>
+		<signjar
+			jar="${app.jar}"
+			alias="${keystore.alias}"
+			storepass="${keystore.pass}"/>
+	</target>
+	
+	<target name="update.jnlps">
+		<java
+			classname="org.opensha.sha.gui.util.JNLPGen"
+			fork="true"
+			failonerror="true"
+			dir="../">
+			<jvmarg value="-Djava.awt.headless=true"/>
+			<classpath>
+				<pathelement location="${build}" />
+				<path refid="library.classpath" />
+			</classpath>
+		</java>
+	</target>
+	
+	<target name="update.wgcep.jnlps">
+		<java
+			classname="org.opensha.refFaultParamDb.gui.DBAppsJNLPGen"
+			fork="true"
+			failonerror="true"
+			dir="../">
+			<jvmarg value="-Djava.awt.headless=true"/>
+			<classpath>
+				<pathelement location="${build}" />
+				<path refid="library.classpath" />
+			</classpath>
+		</java>
+	</target>
+	
+	<target name="update.sra.jnlps">
+		<java
+			classname="org.opensha.sra.gui.SRA_JNLPGen"
+			fork="true"
+			failonerror="true"
+			dir="../">
+			<jvmarg value="-Djava.awt.headless=true"/>
+			<classpath>
+				<pathelement location="${build}" />
+				<path refid="library.classpath" />
+			</classpath>
+		</java>
+	</target>
+	
+	<target name="copy.jnlps" if="project.jnlp.dir">
+		<copy todir="${server.apps.dir}/${app.short.name}/${app.build.type}">
+			<fileset dir="${project.jnlp.dir}/${app.build.type}">
+				<include name="${app.short.name}.jnlp"/>
+				<include name="icons/${app.short.name}*"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<!-- This copies the jar from the build dist dir to the web dir
+		VARIABLES:
+		* server.apps.dir - path where jars are stored
+		* app.short.name - short name of the app
+		* app.build.type - build type, either "nightly" or "dist"
+		* project.jnlp.dir - if present, dir that JNLPs reside in
+		* app.jar - path to app jar file
+		-->
+	<target name="copy.server.jar" if="server.apps.dir">
+		<!-- copy all of the JNLP's and icons -->
+		<antcall target="copy.jnlps"/>
+		<!-- copy the jar file -->
+		<copy file="${app.jar}"
+			todir="${server.apps.dir}/${app.short.name}/${app.build.type}/"/>
+		<!-- delete the old link (which should point to most recent) -->
+		<!-- so the regular delete statement wasn't deleting sym links properly, thus
+			the ugly exec'd delete below -->
+		<exec executable="/bin/rm" failonerror="true">
+			<arg value="-v"/>
+			<arg value="-f"/>
+			<arg value="${server.apps.dir}/${app.short.name}/${app.build.type}/${app.short.name}.jar"/>
+		</exec>
+		<!-- set up a link to the new most recent build -->
+		<exec executable="/bin/ln" failonerror="true">
+			<arg value="-v"/>
+			<arg value="-s"/>
+			<arg value="${server.apps.dir}/${app.short.name}/${app.build.type}/${app.jar.name}"/>
+			<arg value="${server.apps.dir}/${app.short.name}/${app.build.type}/${app.short.name}.jar"/>
+		</exec>
+		<!-- delete the version in the build dir -->
+		<delete file="${app.jar}"/>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+		These targets are for copying resources            
+	 - - - - - - - - - - - - - - - - - -->
+
+	<target name="resource.erfs.main">
+		<copy todir="${build}/org/opensha/sha/earthquake/rupForecastImpl/" overwrite="true">
+			<fileset dir="${src}/org/opensha/sha/earthquake/rupForecastImpl/">
+				<include name="Frankel02/**" />
+				<exclude name="Frankel02/**/*.java" />
+				<include name="Frankel96/**" />
+				<exclude name="Frankel96/**/*.java" />
+				<include name="WG02/*.txt" />
+				<include name="WGCEP_UCERF1/**" />
+				<exclude name="WGCEP_UCERF1/**/*.java" />
+				<include name="step/*.txt" />
+				<include name="YuccaMountain/*.txt" />
+			</fileset>
+		</copy>
+
+		<copy todir="${build}/org/opensha/sha/earthquake/rupForecastImpl/WGCEP_UCERF_2_Final/data" overwrite="true">
+			<fileset dir="${src}/org/opensha/sha/earthquake/rupForecastImpl/WGCEP_UCERF_2_Final/data">
+				<include name="**/*.txt" />
+				<include name="**/*.xml" />
+				<include name="**/*.xls" />
+			</fileset>
+		</copy>
+
+		<copy todir="${build}/org/opensha/sha/earthquake/rupForecastImpl/WGCEP_UCERF_2_Final/griddedSeis" overwrite="true">
+			<fileset dir="${src}/org/opensha/sha/earthquake/rupForecastImpl/WGCEP_UCERF_2_Final/griddedSeis">
+				<include name="**/*.txt" />
+				<include name="**/*.asc" />
+			</fileset>
+		</copy>
+
+		<copy todir="${build}/scratch/UCERF3/data/seismicityGrids" overwrite="true">
+			<fileset dir="${dev}/scratch/UCERF3/data/seismicityGrids">
+				<include name="StrikeSlipWts.txt" />
+				<include name="ReverseWts.txt" />
+				<include name="NormalWts.txt" />
+				<include name="SmoothSeis_KF_4-9-2013_Shallow.txt" />
+				<include name="SmoothSeis_UCERF2.txt" />
+			</fileset>
+		</copy>
+
+		<copy todir="${build}/scratch/UCERF3/data/DeformationModels" overwrite="true">
+			<fileset dir="${dev}/scratch/UCERF3/data/DeformationModels">
+				<include name="gridded_moment_fm*jan14_2013_combined.txt" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${build}/scratch/UCERF3/data/paleoRateData/" overwrite="true">
+			<fileset dir="${dev}/scratch/UCERF3/data/paleoRateData">
+				<include name="UCERF3_OpenIntervals*.xls" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="resource.erfs.dev">
+		<!-- This is for ERFs that we won't include in our regular apps because they are under
+		development -->
+		<copy todir="${build}/scratch/bbradley" overwrite="true">
+			<fileset dir="${dev}/scratch/bbradley">
+				<include name="**/*.txt" />
+			</fileset>
+		</copy>
+		
+		<copy todir="${build}/org/opensha/sha/earthquake/rupForecastImpl/GEM" overwrite="true">
+			<fileset dir="${src}/org/opensha/sha/earthquake/rupForecastImpl/GEM">
+				<include name="**/*.txt" />
+			</fileset>
+		</copy>
+
+		<copy todir="${build}/org/opensha/sha/earthquake/rupForecastImpl/NewZealand" overwrite="true">
+			<fileset dir="${src}/org/opensha/sha/earthquake/rupForecastImpl/NewZealand">
+				<include name="**/*.txt" />
+			</fileset>
+		</copy>
+		<copy todir="${build}/scratch/ned/slab/slab1_usgs_data" overwrite="true">
+			<fileset dir="${dev}/scratch/ned/slab/slab1_usgs_data">
+				<include name="**/*.txt" />
+				<include name="**/*.grd" />
+			</fileset>
+		</copy>
+		<copy todir="${build}/scratch/UCERF3/data" overwrite="true">
+			<fileset dir="${dev}/scratch/UCERF3/data">
+				<exclude name="scratch/**" />
+			</fileset>
+		</copy>
+
+	</target>
+
+	<target name="resource.erfs.gem">
+		<!-- This is for the GEM ERFs...which we may or may not include in our regular apps. -->
+		<copy todir="${build}/org/opensha/gem/GEM1/data/nshmp/south_america" overwrite="true">
+			<fileset dir="${src}/org/opensha/gem/GEM1/data/nshmp/south_america">
+				<include name="**/*.in" />
+				<include name="**/*.out" />
+				<include name="**/*.char*" />
+				<include name="**/*.gr*" />
+			</fileset>
+		</copy>
+		<copy todir="${build}/org/opensha/gem/GEM1/data/nshmp/us" overwrite="true">
+			<fileset dir="${src}/org/opensha/gem/GEM1/data/nshmp/us">
+				<include name="**/*.in" />
+				<include name="**/*.out" />
+				<include name="**/*.char*" />
+				<include name="**/*.gr*" />
+				<include name="**/*.65" />
+				<include name="**/*.65" />
+				<include name="**/grid/*" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="resource.erfs.aux">
+		<!-- This is for ERFs that we won't include in our regular apps because they require
+		too much data, but may be useful to someone. -->
+		<copy todir="${build}/org/opensha/sha/earthquake/rupForecastImpl/NSHMP_CEUS08/" overwrite="true">
+			<fileset dir="${src}/org/opensha/sha/earthquake/rupForecastImpl/NSHMP_CEUS08/">
+				<include name="inputFiles/*.txt" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="resource.imrs">
+		<copy todir="${build}/org/opensha/sha/imr/attenRelImpl/" overwrite="true">
+			<fileset dir="${src}/org/opensha/sha/imr/attenRelImpl/">
+				<include name="**/*.txt" />
+			</fileset>
+		</copy>
+		<copy todir="${build}/resources/data/nshmp" overwrite="true">
+			<fileset dir="${src}/resources/data/nshmp" />
+		</copy>
+		<copy todir="${build}/org/opensha/sha/imr/attenRelImpl/ngaw2/coeff" overwrite="true">
+			<fileset dir="${src}/org/opensha/sha/imr/attenRelImpl/ngaw2/coeff" />
+		</copy>
+	</target>
+	
+	<target name="resource.cybershake">
+		<copy todir="${build}/org/opensha/sha/cybershake/conf/" overwrite="true">
+			<fileset dir="${src}/org/opensha/sha/cybershake/conf/">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="resource.misc.required">
+		<!-- Put things in here that are required by lots of our apps, but don't
+		fit into another category well -->
+		
+		<copy todir="${build}/" overwrite="true" file="include/build.version"/>
+		<copy todir="${build}/" overwrite="true" file="../LICENSE.txt"/>
+
+		<copy todir="${build}/resources/images" overwrite="true">
+			<fileset dir="${src}/resources/images" />
+		</copy>
+		
+		<copy todir="${build}/resources/cpt" overwrite="true">
+			<fileset dir="${src}/resources/cpt" />
+		</copy>
+
+		<copy file="${src}/resources/LICENSE.html" 
+			tofile="${build}/resources/LICENSE.html" overwrite="true" />
+
+		<antcall target="resource.app.icons" />
+		
+		<copy todir="${build}/resources/data/region" overwrite="true">
+			<fileset dir="${src}/resources/data/region" />
+		</copy>
+
+		<copy todir="${build}/org/opensha/refFaultParamDb/dao/db/" overwrite="true">
+			<fileset dir="${src}/org/opensha/refFaultParamDb/dao/db/">
+				<include name="*.dat" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="resource.app.icons" if="app.short.name">
+		<trycatch>
+			<try>
+				<copy todir="${build}/resources/images/icons" overwrite="true">
+					<fileset dir="${project.jnlp.dir}/${app.build.type}/icons/">
+						<include name="${app.short.name}*.png" />
+					</fileset>
+				</copy>
+			</try>
+			<catch/>
+		</trycatch>
+	</target>
+
+	<target name="resource.hazard.apps.server">
+		<!--			IMR Resources				-->
+		<antcall target="resource.imrs" />
+
+		<!--			Other Resources				-->
+		<antcall target="resource.misc.required" />
+	</target>
+
+	<target name="resource.hazard.apps">
+		<!--			ERF Resources				-->
+		<antcall target="resource.erfs.main" />
+		<antcall target="resource.erfs.gem" />
+		<antcall target="resource.cybershake" />
+
+		<antcall target="resource.hazard.apps.server" />
+		
+		<copy todir="${build}/org/opensha/sha/util/component/" overwrite="true">
+			<fileset dir="${src}/org/opensha/sha/util/component/">
+				<include name="*.xls" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="resource.all">
+		<antcall target="resource.hazard.apps" />
+
+		<antcall target="resource.erfs.dev" />
+		<antcall target="resource.erfs.gem" />
+		<antcall target="resource.erfs.aux" />
+		
+		<copy todir="${build}/resources/data/site/USGS_TL" overwrite="true">
+			<fileset dir="${src}/resources/data/site/USGS_TL">
+				<include name="*.csv" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="resource.tests">
+		<copy todir="${build}" overwrite="true">
+			<fileset casesensitive="false" dir="${test}">
+				<include name="**/*.txt" />
+				<include name="**/*.out" />
+				<include name="**/*.xml" />
+				<include name="**/*.cat" />
+				<include name="**/*.dat" />
+				<include name="**/*.csv" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- - - - - - - - - - - - - - - - - - 
+	These targets are for unjar-ing lib files        
+	 - - - - - - - - - - - - - - - - - -->
+
+	<target name="unjar.libs.common">
+		<unjar src="${lib.dir}/iText-2.1.5.jar" dest="${build}" />
+		<unjar src="${lib.dir}/jpedal.jar" dest="${build}" />
+		<unjar src="${lib.dir}/jcommon-1.0.21.jar" dest="${build}" />
+		<unjar src="${lib.dir}/jfreechart-1.0.17.jar" dest="${build}" />
+		<unjar src="${lib.dir}/dom4j-1.6.1.jar" dest="${build}" />
+		<unjar src="${lib.dir}/poi-3.8-20120326.jar" dest="${build}" />
+		<unjar src="${lib.dir}/f2jutil.jar" dest="${build}" />
+		<unjar src="${lib.dir}/commons-math3-3.2.jar" dest="${build}" />
+		<unjar src="${lib.dir}/commons-lang3-3.0.jar" dest="${build}" />
+		<unjar src="${lib.dir}/commons-codec-1.5.jar" dest="${build}" />
+		<unjar src="${lib.dir}/commons-io-2.0.1.jar" dest="${build}" />
+		<unjar src="${lib.dir}/ncCore-4.0.jar" dest="${build}" />
+		<unjar src="${lib.dir}/sdoapi.jar" dest="${build}" />
+		<unjar src="${lib.dir}/ojdbc5.jar" dest="${build}" />
+		<unjar src="${lib.dir}/guava-18.0.jar" dest="${build}" />
+		<unjar src="${lib.dir}/servlet.jar" dest="${build}" />
+		<unjar src="${lib.dir}/Jama-1.0.2.jar" dest="${build}" />
+		<unjar src="${lib.dir}/mysql-connector-java-5.1.16-bin.jar" dest="${build}" />
+		<unjar src="${lib.dir}/BrowserLauncher2-1_3.jar" dest="${build}" />
+		<unjar src="${lib.dir}/parallelcolt-0.9.4.jar" dest="${build}" />
+	</target>
+	
+	<target name="unjar.libs.common.plus.cli" depends="unjar.libs.common">
+		<unjar src="${lib.dir}/commons-cli-1.2.jar" dest="${build}" />
+	</target>
+	
+	<target name="unjar.libs.oaf" depends="unjar.libs.common">
+		<unjar src="${lib.dir}/EventWebService.jar" dest="${build}" />
+	</target>
+	
+	<target name="unjar.libs.extra">
+		<unjar src="${lib.dir}/csparsej.jar" dest="${build}" />
+		<unjar src="${lib.dir}/parallelcolt-0.9.4.jar" dest="${build}" />
+		<unjar src="${lib.dir}/jxlayer.jar" dest="${build}" />
+	</target>
+	
+	<target name="unjar.none">
+		<!-- do nothing, for bare bones apps -->
+	</target>
+
+	<target name="javadoc">
+		<delete dir="${javadoc.dir}" failonerror="yes" verbose="no" />
+		<javadoc 
+			classpathref="library.classpath" 
+			destdir="${javadoc.dir}"
+			author="true"
+			version="true" 
+			use="true"
+			windowtitle="OpenSHA"
+			maxmemory="512m"
+			verbose="false">
+			
+			<fileset dir="${src}" defaultexcludes="yes">
+				<include name="**/*.java" />
+			</fileset>
+			
+			<doctitle>
+				<![CDATA[<a href="http://www.opensha.org">OpenSHA</a>]]>
+			</doctitle>
+			
+			<bottom>
+				<![CDATA[
+				<div id="copyright" style="text-align: right;">
+					<img src="http://www.opensha.org/shared/footer_icon.gif" style="float: right;"/>Copyright &copy;2011 OpenSHA.org
+					and<br /><a href="http://www.usc.edu" target="_blank">the University of Southern California (USC)</a>.<br />
+					All rights reserved. <a href="http://www.opensha.org/license" target="_blank">License - Disclaimer</a>
+				</div>
+				]]>
+			</bottom>
+			
+			<link href="http://download.oracle.com/javase/6/docs/api/"/>
+			<link href="http://commons.apache.org/collections/api-release/"/>
+			<link href="http://commons.apache.org/io/api-release/"/>
+			<link href="http://commons.apache.org/lang/api-release/"/>
+			<link href="http://commons.apache.org/math/apidocs/"/>
+			<link href="http://docs.guava-libraries.googlecode.com/git-history/release/javadoc/"/>
+			<link href="http://dom4j.sourceforge.net/dom4j-1.6.1/apidocs/"/>
+			
+		</javadoc>
+		<copy todir="${javadoc.dir}" overwrite="true">
+			<fileset dir="${src}/resources/doc">
+				<exclude name="**/pkg-lists/**" />
+			</fileset>
+		</copy>
+
+	</target>
+</project>
