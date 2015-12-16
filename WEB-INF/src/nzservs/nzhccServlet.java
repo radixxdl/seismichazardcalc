@@ -1,6 +1,7 @@
 package nzservs;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -70,9 +71,22 @@ public class nzhccServlet extends HttpServlet {
         resp.hazFunction = func;
         
         if (request.getParameterMap().containsKey("disaggval")) {
-        	disaggVal = Double.parseDouble(request.getParameter("disaggval"));
-            getDisaggregatedCurve();
-            resp.disaggWebAddr = disagg;
+        	
+        	String[] disaggValArray = request.getParameterValues("disaggval");
+            ArrayList<disaggWebResp> dwaArray = new ArrayList<disaggWebResp>();
+        	
+        	for (int i = 0; i < disaggValArray.length; i++) {        	
+	        	disaggVal = Double.parseDouble(disaggValArray[i]) / 100;
+	        	System.out.println(disaggVal);
+	            getDisaggregatedCurve();
+	            
+	            disaggWebResp dwResp = new disaggWebResp();
+	            dwResp.disaggVal = disaggVal;
+	            dwResp.disaggWebAddr = disagg;
+	            dwaArray.add(dwResp);
+        	}
+
+        	resp.disaggWebAddrArray = dwaArray;
         }
 
         Gson gson = new Gson();

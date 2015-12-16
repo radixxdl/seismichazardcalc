@@ -1028,7 +1028,7 @@ implements DisaggregationCalculatorAPI {
 		String webaddr=null;
 		try{
 
-			long time = System.nanoTime(); long t;
+			long time = System.nanoTime(); long tl; Double td;
 			
 			if(D) System.out.println("starting to make connection with servlet");
 			URL gmtPlotServlet = new URL(OPENSHA_SERVLET_URL);
@@ -1045,35 +1045,37 @@ implements DisaggregationCalculatorAPI {
 			servletConnection.setDefaultUseCaches (false);
 			// Specify the content type that we will send binary data
 			servletConnection.setRequestProperty ("Content-Type","application/octet-stream");
-			t = System.nanoTime() - time;
-			System.out.println("time 1: " + t);
 
 			ObjectOutputStream outputToServlet = new
 			ObjectOutputStream(servletConnection.getOutputStream());
-			t = System.nanoTime() - time;
-			System.out.println("time 2: " + t);
 
 			//sending the disagg data
 			outputToServlet.writeObject(data);
 			//sending the contents of the Metadata file to the server.
 			outputToServlet.writeObject(metadata);
-			t = System.nanoTime() - time;
-			System.out.println("time 3: " + t);
 
 			outputToServlet.flush();
 			outputToServlet.close();
+			tl = System.nanoTime() - time;
+			td = tl / 1e6;
+			System.out.println("time 1: " + td.intValue() + "ms");
+			time = System.nanoTime();
 
 			// Receive the "actual webaddress of all the gmt related files"
 			// from the servlet after it has received all the data
 			ObjectInputStream inputToServlet = new
 			ObjectInputStream(servletConnection.getInputStream());
-			t = System.nanoTime() - time;
-			System.out.println("time 4: " + t);
+			tl = System.nanoTime() - time;
+			td = tl / 1e6;
+			System.out.println("time 2: " + td.intValue() + "ms");
+			time = System.nanoTime();
 
 			Object messageFromServlet = inputToServlet.readObject();
 			inputToServlet.close();
-			t = System.nanoTime() - time;
-			System.out.println("time 5: " + t);
+			tl = System.nanoTime() - time;
+			td = tl / 1e6;
+			System.out.println("time 3: " + td.intValue() + "ms");
+			time = System.nanoTime();
 			
 			if(messageFromServlet instanceof String){
 				webaddr = (String) messageFromServlet;

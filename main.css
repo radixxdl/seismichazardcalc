@@ -17,21 +17,22 @@
 }
 
 #contentcontainer form {
-    background-color: silver;
+    background-color: lightgrey;
     border: 1px solid darkslategrey;
     border-radius: 1em;
     display: flex;
     flex-wrap: wrap;
     height: auto;
-    padding: 2em;
+    padding: 1em;
     width: 90%;
 }
 
 #contentcontainer form > div {
     background-color: lightgrey;
+    border: 3px solid silver;
     border-radius: 1em;
     height: inherit;
-    margin: 0 auto 2em;
+    margin: 1em auto;
     padding: 1em;
     width: 440px;
 }
@@ -215,11 +216,21 @@
     position: relative;
 }
 
-#disaggresult div {
-    margin: 10px 0;
+.dresult {
+    border: 1px solid black;
+    display: block;
+    margin: 20px;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    text-align: center;
+    width: 700px;
 }
 
 #disaggresult img {
     display: block;
     margin: auto;
+}
+
+#disagg-var label {
+    width: 50px;
 }

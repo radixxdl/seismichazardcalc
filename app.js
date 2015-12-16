@@ -119,7 +119,6 @@ $(document).ready(function() {
 
         // Prepare page for calculation
         updatePageForDisagg(true, false);
-        var dresult = $('#disaggresult');
         var strData = $('#nzhcc').serialize() + "&" + $(this).serialize();
 
         // Retrieve data from servlet
@@ -133,15 +132,14 @@ $(document).ready(function() {
             .done(function(data) {
 
                 // Display disaggregation table and link
-                var disagg = data.disaggWebAddr;
-                dresult.append("<div><img id='' src='" + disagg + "DisaggregationPlot.png' /></div>");
-                dresult.append("<div>For further details and higher resolution plots, please click on <a href='" + disagg + "' target='_blank'>this link</a>.</div>");
+                var disaggArray = data.disaggWebAddrArray;
+                processDisagg(disaggArray);
                 updatePageForDisagg(false, false);
             })
 
             // Display error message
             .fail(function() {
-                dresult.append("Error encountered, please contact the site administrator.");
+                $('#disagg-charts').append("Error encountered, please contact the site administrator.");
                 updatePageForDisagg(false, false);
             })
 
@@ -375,6 +373,36 @@ function drawChart(array) {
     $('#result-chart').html(img);
 }
 
+function processDisagg(array) {
+
+    var charts = $('#disagg-charts');
+    var data = $('#disagg-data');
+    var val; var link;
+
+    var divlinks = $("<div/>").attr('class', "dresult");
+    divlinks.append("<div style='margin-bottom: 10px;'><b>List of full URLs of above links. Note that data is cleared daily at midnight PDT.</b></div>");
+
+    // Display disaggregation plots
+    for (var i = 0; i < array.length; i++) {
+
+        // Get values from array
+        link = array[i]["disaggWebAddr"];
+        val = array[i]["disaggVal"];
+        val = (val * 100).toFixed(0);
+
+        // Write values to div
+        var divresult = $("<div/>").attr('class', "dresult");
+        divresult.append("<div><h3>Probability of Exceedance = " + val + "%</h3></div>");
+        divresult.append("<div><img id='' src='" + link + "DisaggregationPlot.png' /></div>");
+        divresult.append("<div>For further details and higher resolution plots, please click on <a href='" + link + "' target='_blank'>this link</a>.</div>");
+        charts.append(divresult);
+
+        // Add to list of links
+        divlinks.append("<div>" + val + "%: <a href='" + link + "' target=_blank>" + link + "</a></div>");
+    }
+    data.append(divlinks);
+}
+
 function interpolateX(target, xOld, xNew, yOld, yNew) {
 
     // Input must be in percentage, e.g. 50%
@@ -512,7 +540,7 @@ function updatePage(isCalculating, wasCancelled) {
     if (wasCancelled) {
         $('#displayall').attr('checked', false);
         $('#result-table').html("");
-        $('#disaggresult').html("");
+        $('#disagg-charts').html("");
         $('#plot').html("");
         valuesXInt = [];
         valuesYInt = [50, 10, 2];
@@ -550,6 +578,10 @@ function updatePageForDisagg(isCalculating, wasCancelled) {
     $('#disagg-compute').toggle(!isCalculating && wasCancelled);
     $('#disagg-clear').toggle(!isCalculating && !wasCancelled);
     $('#disagg-processing').toggle(isCalculating);
-    $('#disaggresult').toggle(!isCalculating && !wasCancelled);
-    if (wasCancelled) {$('#disaggresult').html("")}
+    $('#disagg-charts').toggle(!isCalculating && !wasCancelled);
+    $('#disagg-data').toggle(!isCalculating && !wasCancelled);
+    if (wasCancelled) {
+        $('#disagg-charts').html("");
+        $('#disagg-data').html("");
+    }
 }

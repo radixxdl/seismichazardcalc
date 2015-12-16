@@ -207,7 +207,7 @@
 
       <div id="contentcontainer">
 
-        <h1>Seismic Hazard Calculator (alpha)</h1>
+        <h1>Seismic Hazard Calculator (beta)</h1>
         <div>
           The Seismic Hazard Calculator is powered by OpenSHA. The source code for OpenSHA can be accessed at the <a href="http://www.opensha.org/apps">OpenSHA website</a>.<br>
           <br>
@@ -215,9 +215,9 @@
           These benefits have been discussed in the <a href="http://bulletin.nzsee.org.nz/48/2/0092" target="_blank">Bradley (2015) paper</a>,
           as published in volume 48, issue 2 of the <a href="http://www.nzsee.org.nz/publications/nzsee-quarterly-bulletin/vol-41-50/" target="_blank">NZSEE bulletin</a>.<br>
           <br>
-          This is an <i>alpha release</i>, meaning that the application is still in development, and not all of the core features are present.<br>
-          There is no version number currently assigned to this release, but the source code can be accessed via <a href="https://github.com/radixxdl/seismichazardcalc">GitHub</a>.<br>
-          For now, this tool has been made available on the web for testing purposes only.<br>
+          This is v0.1.1 of the Seismic Hazard Calculator. The source code can be accessed via <a href="https://github.com/radixxdl/seismichazardcalc">GitHub</a>.<br>
+          This is a <i>beta release</i>, meaning that all core features are present, but there may a number of bugs present in the code.<br>
+          This tool has been made available on the web for testing purposes only.<br>
         </div>
         <div id="disclaimer">
           Disclaimer: While the Seismic Hazard Calculator is available for public use, it must be emphasised that no liability for its use is accepted.
@@ -356,8 +356,9 @@
 
           <div id="disagg-var">
             <h3>Disaggregation</h3>
-            <div><label for="disaggval">Disaggregation Value</label><input type="text" id="disaggval" name="disaggval" value="0.5" /><br>
-            <span id="disaggval-warn" class="warning" hidden>The valid range of disaggregation value is 0.001 to 0.95.</span></div>
+            <input type="checkbox" id="disagg-val1" name="disaggval" value="2" checked><label for="disagg-val1">2%</label>
+            <input type="checkbox" id="disagg-val2" name="disaggval" value="10" checked><label for="disagg-val2">10%</label>
+            <input type="checkbox" id="disagg-val3" name="disaggval" value="50" checked><label for="disagg-val3">50%</label>
           </div>
 
           <div id="disagg-right">
@@ -373,7 +374,8 @@
 
         <div id="disagg-processing" class="processing" hidden><label for="cancel">Calculating ... </label><button id="disagg-cancel">Cancel</button></div>
 
-        <div id="disaggresult" hidden></div>
+        <div id="disagg-charts" hidden></div>
+        <div id="disagg-data" hidden></div>
 
         <div id="contact-us">
           For any enquiries about this tool and how it works, please contact the site administrator at <a href="mailto:dominic.sc.lo@gmail.com">dominic.sc.lo@gmail.com</a>.
