@@ -1,0 +1,12 @@
+package nzservs;
+
+import java.util.HashMap;
+
+import org.opensha.commons.data.function.ArbitrarilyDiscretizedFunc;
+
+public class nzhccResponse {
+	
+	protected ArbitrarilyDiscretizedFunc hazFunction;
+	protected HashMap<Double, String> disaggWebAddr;	
+	
+}
