@@ -215,12 +215,16 @@
           These benefits have been discussed in the <a href="http://bulletin.nzsee.org.nz/48/2/0092" target="_blank">Bradley (2015) paper</a>,
           as published in volume 48, issue 2 of the <a href="http://www.nzsee.org.nz/publications/nzsee-quarterly-bulletin/vol-41-50/" target="_blank">NZSEE bulletin</a>.<br>
           <br>
-          This is v0.1.1 of the Seismic Hazard Calculator. The source code can be accessed via <a href="https://github.com/radixxdl/seismichazardcalc">GitHub</a>.<br>
+          This is v0.1.1-beta.1 of the Seismic Hazard Calculator. The source code can be accessed via <a href="https://github.com/radixxdl/seismichazardcalc">GitHub</a>.<br>
           This is a <i>beta release</i>, meaning that all core features are present, but there may a number of bugs present in the code.<br>
           This tool has been made available on the web for testing purposes only.<br>
         </div>
         <div id="disclaimer">
           Disclaimer: While the Seismic Hazard Calculator is available for public use, it must be emphasised that no liability for its use is accepted.
+        </div>
+
+        <div id="notice">
+          <!--There is an issue with the Wairarapa fault. Until further notice, locations with latitude between -41.6 and -38.8 have been disabled.-->
         </div>
 
         <form id="nzhcc" action="nzservs/nzhccServlet" method="get">
@@ -347,9 +351,9 @@
             </div>
           </div>
 
-          <div id="result-chart" hidden></div>
           <div id="result-table" hidden></div>
-          <div id="response-data" hidden></div>
+          <div id="result-chart" hidden></div>
+          <div id="response-data" style="margin:0;" hidden></div>
         </div>
 
         <form id="disagg" action="nzservs/nzhccServlet" method="get" style="display:none" hidden>

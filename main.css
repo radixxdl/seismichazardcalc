@@ -13,6 +13,7 @@
 }
 
 #contentcontainer > div {
+    margin: 15px 0;
     width: 90%;
 }
 
@@ -49,7 +50,7 @@
 
 #contentcontainer input[type="checkbox"] {
     height: 20px;
-    margin-left: 5px;
+    margin: 0 5px;
     vertical-align: middle;
     width: 20px;
 }
@@ -110,11 +111,11 @@
 #disclaimer {
     color: darkred;
     font-style: italic;
-    margin: 15px 0;
 }
 
-#contact-us {
-    margin: 15px 0;
+#notice {
+    color: red;
+    font-weight: bold;
 }
 
 /* Inputs */
@@ -138,7 +139,7 @@
 #inputs-var .warning {
     color: red;
     font-size: 9pt;
-    margin-left: 183px;
+    margin-left: 150px;
     margin-top: 0;
 }
 

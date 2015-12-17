@@ -56,7 +56,7 @@ $(document).ready(function() {
             // Display error message
             .fail(function() {
                 $('#result-interpolated').text("Error encountered, please contact the site administrator.");
-                updatePage(false, false);
+                updatePage(false, true);
             })
 
     });
@@ -140,7 +140,7 @@ $(document).ready(function() {
             // Display error message
             .fail(function() {
                 $('#disagg-charts').append("Error encountered, please contact the site administrator.");
-                updatePageForDisagg(false, false);
+                updatePageForDisagg(false, true);
             })
 
     });
@@ -297,7 +297,8 @@ function drawChart(array) {
             y: valuesYInt[i] / 100,
             xmin: valuesXAxis[0],
             xmax: valuesXInt[i],
-            color: 'rgb(255, 0, 0)',
+            color: 'rgb(150, 150, 150)',
+            linePattern: 'dashed',
             lineWidth: 2,
             shadow: false
         }};
@@ -307,7 +308,8 @@ function drawChart(array) {
             x: valuesXInt[i],
             ymin: 0.01,
             ymax: valuesYInt[i] / 100,
-            color: 'rgb(255, 0, 0)',
+            color: 'rgb(150, 150, 150)',
+            linePattern: 'dashed',
             lineWidth: 2,
             shadow: false
         }};
@@ -349,8 +351,12 @@ function drawChart(array) {
             }
         },
         series: [{
+            color: 'rgb(0, 0, 0)',
             lineWidth: 4,
-            markerOptions: {show: false},
+            markerOptions: {
+                color: 'rgb(0, 0, 0)',
+                size: 7
+            },
             shadow: false
         }],
         canvasOverlay: {
